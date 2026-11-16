@@ -3,7 +3,7 @@
 <sub>**Português** · [English](README.en.md)</sub>
 
 <picture>
-  <source media="(prefers-reduced-motion: reduce)" srcset="https://raw.githubusercontent.com/hackarun-unicatolica/lp-hackarun/main/docs/media/scroll-preview-poster.jpg" />
+  <source media="(prefers-reduced-motion: reduce)" srcset="https://raw.githubusercontent.com/hackarun2026/lp-hackarun/main/docs/media/scroll-preview-poster.jpg" />
   <img src="docs/media/scroll-preview.webp" width="960" alt="Animação da rolagem da página do HackaRun: a cada seção, as partículas em 3D formam um objeto diferente (globo, cronômetro, ponto de interrogação, terreno, palco, troféu e galáxia) e, no fim, voltam a formar o globo atrás da chamada para a inscrição." />
 </picture>
 
@@ -15,7 +15,7 @@ Landing page do 1º HackaRun, evento de tecnologia, inovação e empreendedorism
 evento, o regulamento, a programação, os mentores e os prêmios, e recebe a inscrição individual dos participantes, que
 é gravada numa planilha do Google. Ao fundo, uma cena 3D em WebGL muda de forma a cada seção, acompanhando o scroll.
 
-[![CI](https://github.com/hackarun-unicatolica/lp-hackarun/actions/workflows/ci.yml/badge.svg)](https://github.com/hackarun-unicatolica/lp-hackarun/actions/workflows/ci.yml)
+[![CI](https://github.com/hackarun2026/lp-hackarun/actions/workflows/ci.yml/badge.svg)](https://github.com/hackarun2026/lp-hackarun/actions/workflows/ci.yml)
 ![Astro](https://img.shields.io/badge/Astro-7-FF5D01?logo=astro&logoColor=white)
 ![TypeScript](https://img.shields.io/badge/TypeScript-strictest-3178C6?logo=typescript&logoColor=white)
 ![Three.js](https://img.shields.io/badge/Three.js-r186-049EF4?logo=threedotjs&logoColor=white)
@@ -306,7 +306,7 @@ Quem é da equipe entra como colaborador e clona o repositório original. Assim,
 Cloudflare. O passo a passo está no [CONTRIBUTING.md](CONTRIBUTING.md#fluxo-de-trabalho-da-equipe).
 
 ```bash
-git clone https://github.com/hackarun-unicatolica/lp-hackarun.git
+git clone https://github.com/hackarun2026/lp-hackarun.git
 cd lp-hackarun
 ```
 

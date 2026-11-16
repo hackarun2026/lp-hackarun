@@ -19,11 +19,11 @@
   ],
   "homepage": "https://hackarun.pages.dev",
   "bugs": {
-    "url": "https://github.com/hackarun-unicatolica/lp-hackarun/issues"
+    "url": "https://github.com/hackarun2026/lp-hackarun/issues"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/hackarun-unicatolica/lp-hackarun.git"
+    "url": "git+https://github.com/hackarun2026/lp-hackarun.git"
   },
   "author": "Marcos Vinicius Muniz Arruda (https://github.com/Marcos-Codfy)",
   "type": "module",

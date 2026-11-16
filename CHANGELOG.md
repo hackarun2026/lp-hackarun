@@ -56,7 +56,7 @@ revisão em cada Pull Request.
   o desenvolvimento. Créditos do README ("Identidade visual: Eduarda Victória (Liga Acadêmica)") e do
   README.en ("Visual identity: Eduarda Victória (Academic League)"). O rodapé
   dos dois READMEs também ficou "Design da página e desenvolvimento" ("Page design and development").
-- Repositório na organização `hackarun-unicatolica`: https://github.com/hackarun-unicatolica/lp-hackarun (o GitHub
+- Repositório na organização `hackarun2026`: https://github.com/hackarun2026/lp-hackarun (o GitHub
   redireciona o endereço antigo). Links novos no `package.json` (`repository`, `homepage` e `bugs`), nos READMEs
   (selo da CI, pôster da prévia, clone e `upstream`), no CONTRIBUTING e nos links de
   comparação deste changelog. CONTRIBUTING com os papéis: Marcos (dono) e Emilly
@@ -568,8 +568,8 @@ Fundação do projeto.
 - Bootstrap do cliente (`App`), contratos de eventos e o esqueleto das seções com a sequência de cenas do scroll.
 - Agenda `/hackarun-2026.ics` gerada no build.
 
-[Unreleased]: https://github.com/hackarun-unicatolica/lp-hackarun/compare/v0.4.0...HEAD
-[0.4.0]: https://github.com/hackarun-unicatolica/lp-hackarun/compare/v0.3.0...v0.4.0
-[0.3.0]: https://github.com/hackarun-unicatolica/lp-hackarun/compare/v0.2.0...v0.3.0
-[0.2.0]: https://github.com/hackarun-unicatolica/lp-hackarun/compare/v0.1.0...v0.2.0
-[0.1.0]: https://github.com/hackarun-unicatolica/lp-hackarun/releases/tag/v0.1.0
+[Unreleased]: https://github.com/hackarun2026/lp-hackarun/compare/v0.4.0...HEAD
+[0.4.0]: https://github.com/hackarun2026/lp-hackarun/compare/v0.3.0...v0.4.0
+[0.3.0]: https://github.com/hackarun2026/lp-hackarun/compare/v0.2.0...v0.3.0
+[0.2.0]: https://github.com/hackarun2026/lp-hackarun/compare/v0.1.0...v0.2.0
+[0.1.0]: https://github.com/hackarun2026/lp-hackarun/releases/tag/v0.1.0
