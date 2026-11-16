@@ -3,7 +3,7 @@
 <sub>[Português](README.md) · **English**</sub>
 
 <picture>
-  <source media="(prefers-reduced-motion: reduce)" srcset="https://raw.githubusercontent.com/hackarun-unicatolica/lp-hackarun/main/docs/media/scroll-preview-poster.jpg" />
+  <source media="(prefers-reduced-motion: reduce)" srcset="https://raw.githubusercontent.com/hackarun2026/lp-hackarun/main/docs/media/scroll-preview-poster.jpg" />
   <img src="docs/media/scroll-preview.webp" width="960" alt="Animation of the HackaRun page scroll: at each section the 3D particles form a different object (globe, stopwatch, question mark, terrain, stage, trophy and galaxy) and, at the end, they form the globe again behind the registration call to action." />
 </picture>
 
@@ -15,7 +15,7 @@ Landing page for the 1st HackaRun, UniCatólica's technology, innovation and ent
 presents the event, the rules, the schedule, the mentors and the prizes, and takes individual registrations, which are
 saved to a Google Sheet. In the background, a WebGL 3D scene changes shape at each section as the page scrolls.
 
-[![CI](https://github.com/hackarun-unicatolica/lp-hackarun/actions/workflows/ci.yml/badge.svg)](https://github.com/hackarun-unicatolica/lp-hackarun/actions/workflows/ci.yml)
+[![CI](https://github.com/hackarun2026/lp-hackarun/actions/workflows/ci.yml/badge.svg)](https://github.com/hackarun2026/lp-hackarun/actions/workflows/ci.yml)
 ![Astro](https://img.shields.io/badge/Astro-7-FF5D01?logo=astro&logoColor=white)
 ![TypeScript](https://img.shields.io/badge/TypeScript-strictest-3178C6?logo=typescript&logoColor=white)
 ![Three.js](https://img.shields.io/badge/Three.js-r186-049EF4?logo=threedotjs&logoColor=white)
@@ -309,7 +309,7 @@ Team members join as collaborators and clone the original repository, so each PR
 are in [CONTRIBUTING.md](CONTRIBUTING.md#fluxo-de-trabalho-da-equipe) (pt-BR).
 
 ```bash
-git clone https://github.com/hackarun-unicatolica/lp-hackarun.git
+git clone https://github.com/hackarun2026/lp-hackarun.git
 cd lp-hackarun
 ```
 

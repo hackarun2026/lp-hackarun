@@ -7,8 +7,8 @@ Valeu por ajudar no HackaRun! Este guia resume o fluxo de quem vai mexer no cód
 
 ## Fluxo de trabalho da equipe
 
-O repositório fica na organização **`hackarun-unicatolica`** do GitHub:
-https://github.com/hackarun-unicatolica/lp-hackarun. O site oficial é **https://hackarun.com.br** (Cloudflare
+O repositório fica na organização **`hackarun2026`** do GitHub:
+https://github.com/hackarun2026/lp-hackarun. O site oficial é **https://hackarun.com.br** (Cloudflare
 Pages). Ele se atualiza sozinho a cada merge na `main`, e todo Pull Request ganha uma prévia própria. Ninguém dá push
 direto na `main`: tudo entra por PR, com a CI verde e a aprovação de um dos **donos do código**
 ([`.github/CODEOWNERS`](.github/CODEOWNERS)):
@@ -26,12 +26,12 @@ a aprovação de outra pessoa. Mesmo assim, a mudança entra por PR.
 ### Primeira vez
 
 1. Mande o seu **nome de usuário do GitHub** para o Marcos (dono do repositório) ou para a Emilly (administradora).
-   Um dos dois adiciona você como colaborador do repositório na organização `hackarun-unicatolica`; aceite o convite
+   Um dos dois adiciona você como colaborador do repositório na organização `hackarun2026`; aceite o convite
    pelo aviso do GitHub (o sino de notificações) ou pelo link que chega no seu e-mail.
 2. **Clone o repositório original, sem fork.** PR que vem de fork não ganha a prévia da Cloudflare.
 
    ```bash
-   git clone https://github.com/hackarun-unicatolica/lp-hackarun.git
+   git clone https://github.com/hackarun2026/lp-hackarun.git
    cd lp-hackarun
    npm run setup
    npm run dev
@@ -111,7 +111,7 @@ capturas de tela no PR; um dos donos do código revisa.
    ```bash
    git clone https://github.com/<seu-usuario>/lp-hackarun.git
    cd lp-hackarun
-   git remote add upstream https://github.com/hackarun-unicatolica/lp-hackarun.git
+   git remote add upstream https://github.com/hackarun2026/lp-hackarun.git
    ```
 
 2. Prepare o projeto com `npm run setup`: ele confere o Node (24 LTS, do `.nvmrc`), roda o `npm ci`, cria o `.env` e
@@ -145,7 +145,7 @@ Quem tem acesso de escrita ao repositório original segue o [fluxo da equipe](#f
    `main`).
 
 6. Envie a branch (`git push -u origin feat/<assunto>`) e abra um Pull Request para a `main` de
-   `hackarun-unicatolica/lp-hackarun`, preenchendo o template. A CI precisa ficar verde.
+   `hackarun2026/lp-hackarun`, preenchendo o template. A CI precisa ficar verde.
 7. Um dos donos do código revisa e aprova. O merge é feito com **Squash and merge**.
 
 ## Commits: Conventional Commits
