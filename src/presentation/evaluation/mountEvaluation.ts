@@ -2,6 +2,7 @@
 // tela, como na formação das equipes do sorteio: o texto embaralha em caracteres de terminal e trava no valor certo,
 // numa cascata leve. No fundo, uma chuva de código bem fraca. "Reduzir movimento" desliga tudo isso
 import { setupConsult } from './consult';
+import { setupTeamSuggestions } from './teamSuggestions';
 import { scrambleFrame } from './scramble';
 
 // chuva do fundo com katakana; o texto embaralha só com letras e números de largura parecida (não empurra o layout)
@@ -133,6 +134,7 @@ function rain(canvas: HTMLCanvasElement): void {
 // colorOf: cor do cartão de cada equipe (tipo do Pokémon), injetada pela página
 export function mountEvaluation(colorOf: (team: string) => string): void {
   const reduced = reducedMotion();
+  setupTeamSuggestions();
   // resultado da equipe: entra com o mesmo efeito dos blocos da página (embaralha e trava)
   setupConsult(colorOf, (card) => {
     if (reduced) return;
