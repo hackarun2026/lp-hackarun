@@ -13,19 +13,23 @@ export interface NavLink {
   spy?: string;
 }
 
+// resultado oficial da avaliação técnica dos projetos (depois da final, 14/11)
+export const EVALUATION_PATH = '/avaliacao';
+
 export const NAV_LINKS: readonly NavLink[] = [
   { href: '#sobre', label: 'Sobre' },
   // { href: '#missoes', label: 'Missões' },
   { href: '#programacao', label: 'Programação' },
   { href: '#avaliadores', label: 'Avaliadores' },
   { href: '#final', label: 'Final' },
+  { href: EVALUATION_PATH, label: 'Resultados' },
   { href: '#patrocinadores', label: 'Patrocinadores' },
   // /equipes fica fora do menu até o sorteio (12/11): a página existe, mas sem link nem indexação
   { href: '#faq', label: 'FAQ' },
 ];
 
 // em que página o header/rodapé está: na LP as âncoras rolam; fora dela voltam pra LP (/#secao)
-export type SitePage = 'home' | 'teams' | 'registration' | 'authorization' | 'mentor';
+export type SitePage = 'home' | 'teams' | 'registration' | 'authorization' | 'mentor' | 'evaluation';
 
 export const AUTHORIZATION_PATH = '/autorizacao';
 
@@ -35,6 +39,7 @@ const PAGE_PATHS: Record<SitePage, string> = {
   registration: REGISTRATION_PATH,
   authorization: AUTHORIZATION_PATH,
   mentor: MENTOR_PATH,
+  evaluation: EVALUATION_PATH,
 };
 
 export interface ResolvedNavLink {

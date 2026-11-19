@@ -50,3 +50,20 @@ export const typeLabel = (type: string): string => TYPE_LABELS[type] ?? type;
 
 // card da página /equipes: a cor do tipo vira a variável --type
 export const mascotStyle = (types: readonly string[]): string => `--type: ${typeColor(types)}`;
+
+// um tipo diferente para cada item quando der (ex.: os cartões das finalistas): quem tem menos tipos escolhe primeiro,
+// cada um pega o primeiro tipo ainda livre; sem tipo livre, fica com o principal
+export function distinctTypes(
+  items: readonly { key: string; types: readonly string[] }[],
+): Map<string, string> {
+  const used = new Set<string>();
+  const picked = new Map<string, string>();
+  [...items]
+    .sort((a, b) => a.types.length - b.types.length)
+    .forEach((item) => {
+      const type = item.types.find((t) => !used.has(t)) ?? item.types[0] ?? '';
+      used.add(type);
+      picked.set(item.key, type);
+    });
+  return picked;
+}
