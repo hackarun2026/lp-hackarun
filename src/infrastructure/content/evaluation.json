@@ -140,9 +140,10 @@
         "pitch": 13
       },
       "sum": 87,
-      "penalty": -0.01,
+      "penalty": 0,
       "grade": 86.99,
-      "summary": "PWA de fidelização em que o visitante entra com telefone + OTP, escaneia o QR Code da NFC-e do cupom fiscal (ou digita os 44 dígitos) e ganha 'sementes'. A chave identifica a loja pelo CNPJ e alimenta missões entre lojas/categorias, ritmo semanal, ranking da safra e resgate de prêmios com voucher de 6 caracteres válido por 10 minutos. Para o shopping, o ganho é medir recorrência identificada sem integrar com PDV; há uma API de parceiro (ofertas e métricas agregadas) protegida por chave."
+      "summary": "PWA de fidelização em que o visitante entra com telefone + OTP, escaneia o QR Code da NFC-e do cupom fiscal (ou digita os 44 dígitos) e ganha 'sementes'. A chave identifica a loja pelo CNPJ e alimenta missões entre lojas/categorias, ritmo semanal, ranking da safra e resgate de prêmios com voucher de 6 caracteres válido por 10 minutos. Para o shopping, o ganho é medir recorrência identificada sem integrar com PDV; há uma API de parceiro (ofertas e métricas agregadas) protegida por chave.",
+      "adjustment": -0.01
     },
     {
       "rank": 9,

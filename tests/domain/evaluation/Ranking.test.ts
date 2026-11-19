@@ -88,7 +88,9 @@ describe('dados oficiais (evaluation.json)', () => {
     expect(muk?.grade).toBe(87);
     expect(muk?.finalist).toBe(true);
     expect(hypno?.grade).toBe(86.99);
-    expect(hypno?.penalty).toBe(-0.01);
+    // o −0,01 é ajuste interno de desempate: a página mostra a nota, sem penalidade
+    expect(hypno?.penalty).toBe(0);
+    expect(hypno?.adjustment).toBe(-0.01);
     expect(hypno?.finalist).toBe(false);
     expect(hypno?.rank).toBe((muk?.rank ?? 0) + 1);
   });

@@ -35,6 +35,8 @@ export interface EvaluatedProject {
   readonly penalty: number;
   readonly grade: number;
   readonly summary: string;
+  // ajuste interno da coordenação (ex.: desempate), já embutido na nota e não mostrado na página
+  readonly adjustment?: number;
 }
 
 const EPSILON = 1e-9;
@@ -70,8 +72,10 @@ function check(project: EvaluatedProject, index: number): void {
   }
   if (total !== project.sum) throw new DomainError(`A soma dos critérios não fecha (${project.team}).`);
   if (project.penalty > 0) throw new DomainError(`Penalidade não pode somar pontos (${project.team}).`);
-  if (Math.abs(project.sum + project.penalty - project.grade) > EPSILON) {
-    throw new DomainError(`Nota diferente de soma menos penalidade (${project.team}).`);
+  const adjustment = project.adjustment ?? 0;
+  if (adjustment > 0) throw new DomainError(`Ajuste não pode somar pontos (${project.team}).`);
+  if (Math.abs(project.sum + project.penalty + adjustment - project.grade) > EPSILON) {
+    throw new DomainError(`Nota diferente de soma menos penalidade e ajuste (${project.team}).`);
   }
 }
 
