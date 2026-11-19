@@ -527,3 +527,55 @@
   display: grid;
   gap: var(--space-3);
 }
+
+/* análise da banca: justificativa embaixo de cada critério, pontos fortes e de atenção lado a lado */
+.ev-card__scores:has(.ev-card__why) {
+  grid-template-columns: 1fr;
+}
+
+.ev-card__why {
+  grid-column: 1 / -1;
+  margin: var(--space-1) 0 0;
+  max-width: 80ch;
+  color: var(--text-muted);
+  font-size: var(--fs-sm);
+  line-height: 1.7;
+}
+
+.ev-card__points {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(min(100%, 20rem), 1fr));
+  gap: var(--space-4);
+}
+
+.ev-points {
+  padding: var(--space-4) var(--space-5);
+  border-top: 3px solid var(--points-color);
+  background: var(--surface-solid);
+}
+
+.ev-points--strong {
+  --points-color: var(--type);
+}
+
+.ev-points--attention {
+  --points-color: var(--ink-gold, #ffc24a);
+}
+
+.ev-points__title {
+  margin: 0 0 var(--space-3);
+  color: var(--points-color);
+  font-family: var(--font-mono);
+  font-size: var(--fs-sm);
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.ev-points__list {
+  display: grid;
+  gap: var(--space-2);
+  margin: 0;
+  padding-left: 1.1rem;
+  color: var(--text);
+  line-height: 1.6;
+}
