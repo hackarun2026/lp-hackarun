@@ -11,9 +11,11 @@ import './evaluation.css';
 
 interface Props {
   ranking: Ranking;
+  // equipe finalista → cor do tipo do Pokémon (o cartão usa como --type)
+  colors: Map<string, string>;
 }
 
-const { ranking } = Astro.props;
+const { ranking, colors } = Astro.props;
 const total = ranking.projects.length;
 
 const method = [
@@ -67,7 +69,11 @@ const scale = [
       </h2>
       <ol class="ev-podium">
         {ranking.finalists.map((p) => (
-          <li class:list={['ev-podium__card', { 'ev-podium__card--first': p.rank === 1 }]} data-ev-reveal>
+          <li
+            class:list={['ev-podium__card', { 'ev-podium__card--first': p.rank === 1 }]}
+            data-ev-reveal
+            style={`--type:${colors.get(p.team) ?? '#00e5ff'}`}
+          >
             <span class="ev-podium__rank">{formatOrdinal(p.rank)}</span>
             <span class="ev-podium__team" data-ev-scramble>
               Equipe {p.team}

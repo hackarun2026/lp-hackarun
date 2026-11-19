@@ -4,7 +4,9 @@
 import { normalizeSearch } from '@domain/evaluation/Ranking';
 import { scrambleFrame } from './scramble';
 
+// chuva do fundo com katakana; o texto embaralha só com letras e números de largura parecida (não empurra o layout)
 const GLYPHS = 'アイウエオカキクケコサシスセソタチツテトﾊﾋﾌﾍﾎ0123456789ABCDEF<>/{}[]#$%';
+const TEXT_GLYPHS = 'ABCDEFGHKMNOPRSTUVXZ0123456789';
 const DIGITS = '0123456789';
 const SCRAMBLE_MS = 650;
 const STAGGER_MS = 45;
@@ -21,9 +23,13 @@ function scramble(el: HTMLElement, delay: number): void {
   finals.set(el, final);
   const run = (runs.get(el) ?? 0) + 1;
   runs.set(el, run);
-  const pool = el.hasAttribute('data-ev-number') ? DIGITS : GLYPHS;
+  const pool = el.hasAttribute('data-ev-number') ? DIGITS : TEXT_GLYPHS;
   const pick = randomOf(pool);
   const start = performance.now() + delay;
+  // a caixa fica com o tamanho do texto final durante o efeito: nada ao redor se mexe
+  // offsetWidth ignora o scale da entrada; +1 px de folga para o arredondamento
+  el.style.width = `${el.offsetWidth + 1}px`;
+  el.style.height = `${el.offsetHeight}px`;
   el.classList.add('ev-scrambling');
   const step = (now: number) => {
     if (runs.get(el) !== run) return;
@@ -34,6 +40,8 @@ function scramble(el: HTMLElement, delay: number): void {
       return;
     }
     el.textContent = final;
+    el.style.width = '';
+    el.style.height = '';
     el.classList.remove('ev-scrambling');
     el.classList.add('ev-locked');
   };

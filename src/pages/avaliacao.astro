@@ -7,18 +7,19 @@ import SiteHeader from '@presentation/components/layout/SiteHeader.astro';
 import SiteFooter from '@presentation/components/layout/SiteFooter.astro';
 import EvaluationSection from '@presentation/evaluation/EvaluationSection.astro';
 import { serverContainer } from '@composition/server';
-import { evaluationRanking } from '@composition/evaluation';
+import { evaluationRanking, finalistColors } from '@composition/evaluation';
 import { buildAppConfig } from '@presentation/app/AppConfig';
 import { EVALUATION_PAGE } from '@presentation/components/seo/evaluationPageSeo';
 
 const data = await serverContainer().getLandingPage.execute();
 const ranking = evaluationRanking();
+const colors = finalistColors(ranking);
 ---
 
 <PageLayout seo={EVALUATION_PAGE} appConfig={buildAppConfig(data.event)}>
   <SiteHeader registration={data.event.registration} page="evaluation" />
   <main id="conteudo">
-    <EvaluationSection ranking={ranking} />
+    <EvaluationSection ranking={ranking} colors={colors} />
   </main>
   <SiteFooter data={data} page="evaluation" />
 </PageLayout>

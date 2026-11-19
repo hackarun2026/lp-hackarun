@@ -104,31 +104,30 @@
 }
 
 .ev-podium__card {
+  --type: var(--c-cyan);
   position: relative;
   display: grid;
   gap: var(--space-1);
   padding: var(--space-5);
-  border: 1px solid var(--surface-line);
-  background: var(--glass-bg);
+  border: 1px solid color-mix(in srgb, var(--type) 40%, transparent);
+  background:
+    radial-gradient(120% 90% at 0% 0%, color-mix(in srgb, var(--type) 16%, transparent), transparent 60%),
+    var(--glass-bg);
   clip-path: var(--clip-card);
 }
 
+/* cada finalista com a cor do tipo do Pokémon da equipe */
 .ev-podium__card::before {
   content: '';
   position: absolute;
   inset: 0 0 auto;
   height: 2px;
-  background: var(--grad-energy);
+  background: linear-gradient(90deg, var(--type), color-mix(in srgb, var(--type) 20%, transparent));
+  box-shadow: 0 0 12px var(--type);
 }
 
 .ev-podium__card--first {
-  border-color: rgb(255 194 74 / 0.45);
-  background: radial-gradient(120% 90% at 0% 0%, rgb(255 194 74 / 0.16), transparent 60%), var(--glass-bg);
-  box-shadow: 0 0 32px rgb(255 194 74 / 0.12);
-}
-
-.ev-podium__card--first::before {
-  background: var(--grad-prize);
+  box-shadow: 0 0 32px color-mix(in srgb, var(--type) 18%, transparent);
 }
 
 @media (min-width: 720px) {
@@ -138,14 +137,10 @@
 }
 
 .ev-podium__rank {
-  color: var(--ink-cyan);
+  color: var(--type);
   font-family: var(--font-mono);
   font-size: var(--fs-hud);
   letter-spacing: var(--tracking-hud);
-}
-
-.ev-podium__card--first .ev-podium__rank {
-  color: var(--ink-gold);
 }
 
 .ev-podium__team {
@@ -167,13 +162,8 @@
 .ev-podium__grade strong {
   font-family: var(--font-display);
   font-size: var(--fs-2xl);
-  background: var(--grad-energy);
-  background-clip: text;
-  color: transparent;
-}
-
-.ev-podium__card--first .ev-podium__grade strong {
-  background-image: var(--grad-prize);
+  color: var(--type);
+  text-shadow: 0 0 18px color-mix(in srgb, var(--type) 55%, transparent);
 }
 
 .ev-podium__grade small {
@@ -577,9 +567,13 @@ details[open] .ev-chevron {
 }
 
 .ev-scrambling {
+  display: inline-block;
+  overflow: hidden;
+  max-width: 100%;
   color: var(--ink-cyan);
-  font-family: var(--font-mono);
   text-shadow: 0 0 8px rgb(0 229 255 / 0.6);
+  white-space: nowrap;
+  vertical-align: bottom;
 }
 
 .ev-locked {
