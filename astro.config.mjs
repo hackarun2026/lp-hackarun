@@ -49,6 +49,9 @@ export default defineConfig({
       target: 'es2022',
       // three fica num chunk separado, carregado só depois do primeiro paint
       chunkSizeWarningLimit: 700,
+      // script de página nunca vira <script> inline: a CSP (public/_headers) só aceita script de arquivo ('self').
+      // Sem isso, um script pequeno (ex.: o da /avaliacao) era embutido no HTML e bloqueado em produção
+      assetsInlineLimit: (file) => (file.endsWith('.js') ? false : undefined),
     },
   },
 });
