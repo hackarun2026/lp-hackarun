@@ -632,3 +632,13 @@ details[open] .ev-chevron {
     animation: none;
   }
 }
+
+.ev-soon p {
+  max-width: 68ch;
+  margin: 0;
+  padding: var(--space-4) var(--space-5);
+  border-left: 3px solid var(--ink-cyan);
+  background: var(--surface-solid);
+  color: var(--text);
+  line-height: 1.7;
+}
