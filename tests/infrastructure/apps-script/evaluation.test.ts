@@ -19,6 +19,13 @@ const HEADERS = [
   'Nota',
   'Finalista',
   'Resumo',
+  'Justificativa Aderência',
+  'Justificativa Implementação',
+  'Justificativa Inovação',
+  'Justificativa UX',
+  'Justificativa Pitch',
+  'Pontos fortes',
+  'Pontos de atenção',
 ];
 
 function setup() {
@@ -42,6 +49,13 @@ function setup() {
     87,
     'sim',
     'Resumo Mew.',
+    'Ader Mew.',
+    'Impl Mew.',
+    'Inov Mew.',
+    'UX Mew.',
+    'Pitch Mew.',
+    'Forte 1\n Forte 2 \n',
+    'Atenção 1',
   ]);
   sheet.appendRow([
     2,
@@ -85,6 +99,24 @@ describe('Apps Script · avaliação técnica', () => {
     const text = JSON.stringify(res);
     expect(text).not.toContain('Onix');
     expect(text).not.toContain('@exemplo.com');
+  });
+
+  it('devolve a análise (justificativas e listas, uma linha por item); sem as colunas, vem vazia', () => {
+    const { lookup } = setup();
+    expect(lookup('Mew', 'hr26-aaaaaa@exemplo.com').result).toMatchObject({
+      justifications: {
+        adherence: 'Ader Mew.',
+        implementation: 'Impl Mew.',
+        innovation: 'Inov Mew.',
+        ux: 'UX Mew.',
+        pitch: 'Pitch Mew.',
+      },
+      strengths: ['Forte 1', 'Forte 2'],
+      attention: ['Atenção 1'],
+    });
+    const onix = lookup('Onix', 'hr26-dddddd@exemplo.com').result;
+    expect(onix?.['strengths']).toEqual([]);
+    expect(onix?.['justifications']).toMatchObject({ adherence: '' });
   });
 
   it('aceita o nome com ou sem "Equipe", com acento/caixa diferentes, e e-mail com espaços', () => {

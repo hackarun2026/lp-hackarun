@@ -17,7 +17,22 @@ const EVALUATION_HEADERS = [
   'Nota',
   'Finalista',
   'Resumo',
+  'Justificativa Aderência',
+  'Justificativa Implementação',
+  'Justificativa Inovação',
+  'Justificativa UX',
+  'Justificativa Pitch',
+  'Pontos fortes',
+  'Pontos de atenção',
 ];
+
+// uma linha da célula = um item da lista
+function evaluationList_(value) {
+  return drawText_(value)
+    .split(/\r?\n/)
+    .map((s) => s.trim())
+    .filter(Boolean);
+}
 const EVALUATION_CACHE_SECONDS = 300;
 
 function evaluationAction_(body) {
@@ -102,6 +117,15 @@ function evaluationLookup_(book, body) {
       grade: evaluationNumber_(row[11]),
       finalist: /^sim$/i.test(drawText_(row[12])),
       summary: drawText_(row[13]),
+      justifications: {
+        adherence: drawText_(row[14]),
+        implementation: drawText_(row[15]),
+        innovation: drawText_(row[16]),
+        ux: drawText_(row[17]),
+        pitch: drawText_(row[18]),
+      },
+      strengths: evaluationList_(row[19]),
+      attention: evaluationList_(row[20]),
     },
   };
 }

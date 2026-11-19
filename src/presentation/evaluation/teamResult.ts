@@ -19,6 +19,20 @@ export interface TeamResult {
   grade: number;
   finalist: boolean;
   summary: string;
+  // análise da banca: justificativa de cada critério, pontos fortes e pontos de atenção (podem faltar)
+  justifications?: Partial<Record<CriterionKey, string>>;
+  strengths?: string[];
+  attention?: string[];
+}
+
+function textList(title: string, items: string[] | undefined, className: string): HTMLElement | null {
+  const list = (items ?? []).filter((s) => typeof s === 'string' && s.trim());
+  if (!list.length) return null;
+  const box = el('section', `ev-points ${className}`);
+  const ul = el('ul', 'ev-points__list');
+  list.forEach((s) => ul.append(el('li', '', s)));
+  box.append(el('h4', 'ev-points__title', title), ul);
+  return box;
 }
 
 export function isTeamResult(value: unknown): value is TeamResult {
@@ -79,7 +93,7 @@ export function renderTeamResult(
     const item = el('li', 'ev-card__score', undefined, { style: `--share:${score / c.max}` });
     const value = el('span', 'ev-card__value');
     value.append(
-      el('span', '', String(score), { 'data-ev-number': '' }),
+      el('span', '', formatGrade(score), { 'data-ev-number': '' }),
       document.createTextNode(`/${c.max}`),
     );
     item.append(
@@ -87,11 +101,13 @@ export function renderTeamResult(
       value,
       el('span', 'ev-card__bar', undefined, { 'aria-hidden': 'true' }),
     );
+    const why = result.justifications?.[c.key];
+    if (typeof why === 'string' && why.trim()) item.append(el('p', 'ev-card__why', why));
     list.append(item);
   });
 
   const totals = el('dl', 'ev-card__totals');
-  const pairs: [string, string][] = [['Soma dos critérios', `${result.sum}/${MAX_POINTS}`]];
+  const pairs: [string, string][] = [['Soma dos critérios', `${formatGrade(result.sum)}/${MAX_POINTS}`]];
   if (result.penalty < 0) pairs.push(['Penalidade de prazo', formatPenalty(result.penalty)]);
   pairs.push(['Coeficiente', formatCoefficient(coefficientOf(result.grade))]);
   pairs.forEach(([label, value]) => {
@@ -104,6 +120,13 @@ export function renderTeamResult(
   if (result.theme) body.append(el('p', 'ev-more__theme', result.theme));
   if (result.summary) body.append(el('p', 'ev-more__summary', result.summary));
 
+  const points = el('div', 'ev-card__points');
+  [
+    textList('Pontos fortes', result.strengths, 'ev-points--strong'),
+    textList('Pontos de atenção', result.attention, 'ev-points--attention'),
+  ].forEach((box) => box && points.append(box));
+
   card.append(head, list, totals, body);
+  if (points.childElementCount) card.append(points);
   target.append(card);
 }
