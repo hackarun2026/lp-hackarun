@@ -1,25 +1,21 @@
 ---
-// resultado oficial da avaliação técnica dos projetos (entrega final, 14/11): finalistas, critérios, como foi avaliado
-// e a classificação geral com busca. Dados fixos em evaluation.json (sem planilha); o resumo de cada projeto abre ao
-// tocar na linha. Detalhe técnico dos projetos fica de fora: depois do evento o projeto é da equipe
+// avaliação técnica dos projetos (entrega final, 14/11): critérios e como foi avaliado são
+// públicos. As notas ficam fora do site público: cada equipe consulta só a sua
 import PageLayout from '@presentation/layouts/PageLayout.astro';
 import SiteHeader from '@presentation/components/layout/SiteHeader.astro';
 import SiteFooter from '@presentation/components/layout/SiteFooter.astro';
 import EvaluationSection from '@presentation/evaluation/EvaluationSection.astro';
 import { serverContainer } from '@composition/server';
-import { evaluationRanking, finalistColors } from '@composition/evaluation';
 import { buildAppConfig } from '@presentation/app/AppConfig';
 import { EVALUATION_PAGE } from '@presentation/components/seo/evaluationPageSeo';
 
 const data = await serverContainer().getLandingPage.execute();
-const ranking = evaluationRanking();
-const colors = finalistColors(ranking);
 ---
 
 <PageLayout seo={EVALUATION_PAGE} appConfig={buildAppConfig(data.event)}>
   <SiteHeader registration={data.event.registration} page="evaluation" />
   <main id="conteudo">
-    <EvaluationSection ranking={ranking} colors={colors} />
+    <EvaluationSection />
   </main>
   <SiteFooter data={data} page="evaluation" />
 </PageLayout>

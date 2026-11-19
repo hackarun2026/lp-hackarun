@@ -1,22 +1,14 @@
 ---
-// conteúdo da página /avaliacao. Sem JS tudo aparece pronto (a busca e os efeitos são só melhoria): o texto final já
-// vem no HTML e o mountEvaluation embaralha e "trava" cada linha quando ela entra na tela
+// conteúdo público da página /avaliacao: critérios e como foi avaliado. As notas NÃO entram no HTML (a coordenação
+// quer cada equipe vendo só a sua); o mountEvaluation faz os efeitos de entrada
 import PageHalo from '@presentation/components/layout/PageHalo.astro';
-import EvaluationRow from './EvaluationRow.astro';
 import SectionHeader from '@presentation/sections/shared/SectionHeader.astro';
-import { CRITERIA, FINALISTS, MAX_POINTS, type Ranking } from '@domain/evaluation/Ranking';
-import { formatGrade, formatOrdinal } from '@presentation/formatters/evaluationFormat';
+import { CRITERIA, FINALISTS, MAX_POINTS } from '@domain/evaluation/Ranking';
 import '@presentation/sections/sections.css';
 import './evaluation.css';
 
-interface Props {
-  ranking: Ranking;
-  // equipe finalista → cor do tipo do Pokémon (o cartão usa como --type)
-  colors: Map<string, string>;
-}
-
-const { ranking, colors } = Astro.props;
-const total = ranking.projects.length;
+// projetos avaliados na entrega final (número público, não identifica equipe)
+const total = 47;
 
 const method = [
   'Foi avaliada a versão final de cada repositório entregue no formulário da Entrega 1, como estava na tarde de 14/11.',
@@ -48,7 +40,7 @@ const scale = [
         code="AV"
         eyebrow="Resultado oficial"
         title="Avaliação técnica <em>dos projetos</em>"
-        lead="As notas finais da entrega dos projetos do HackaRun 2026, critério por critério. Toque em uma linha da classificação para ler o resumo do projeto."
+        lead="Como os projetos da entrega final do HackaRun 2026 foram avaliados. As notas são enviadas só para cada equipe."
       />
       <ul class="ev-stats" aria-label="Resumo da avaliação">
         <li>
@@ -63,37 +55,10 @@ const scale = [
       </ul>
     </div>
 
-    <section class="ev-block" aria-labelledby="ev-finalists">
-      <h2 class="ev-block__title" id="ev-finalists">
-        <span aria-hidden="true">01</span> Finalistas
-      </h2>
-      <ol class="ev-podium">
-        {ranking.finalists.map((p) => (
-          <li
-            class:list={['ev-podium__card', { 'ev-podium__card--first': p.rank === 1 }]}
-            data-ev-reveal
-            style={`--type:${colors.get(p.team) ?? '#00e5ff'}`}
-          >
-            <span class="ev-podium__rank">{formatOrdinal(p.rank)}</span>
-            <span class="ev-podium__team" data-ev-scramble>
-              Equipe {p.team}
-            </span>
-            <span class="ev-podium__project" data-ev-scramble>
-              {p.project}
-            </span>
-            <span class="ev-podium__grade">
-              <strong data-ev-number>{formatGrade(p.grade)}</strong>
-              <small>/100</small>
-            </span>
-          </li>
-        ))}
-      </ol>
-    </section>
-
     <div class="ev-split">
       <section class="ev-block" aria-labelledby="ev-criteria">
         <h2 class="ev-block__title" id="ev-criteria">
-          <span aria-hidden="true">02</span> Critérios
+          <span aria-hidden="true">01</span> Critérios
         </h2>
         <ul class="ev-criteria">
           {CRITERIA.map((c) => (
@@ -115,7 +80,7 @@ const scale = [
 
       <section class="ev-block" aria-labelledby="ev-method">
         <h2 class="ev-block__title" id="ev-method">
-          <span aria-hidden="true">03</span> Como avaliamos
+          <span aria-hidden="true">02</span> Como avaliamos
         </h2>
         <ol class="ev-method">
           {method.map((line) => (
@@ -125,68 +90,13 @@ const scale = [
       </section>
     </div>
 
-    <section class="ev-block" aria-labelledby="ev-ranking">
-      <h2 class="ev-block__title" id="ev-ranking">
-        <span aria-hidden="true">04</span> Classificação geral
+    <section class="ev-block ev-soon" aria-labelledby="ev-access">
+      <h2 class="ev-block__title" id="ev-access">
+        <span aria-hidden="true">03</span> Notas da sua equipe
       </h2>
-
-      <div class="ev-search" role="search">
-        <label class="ev-search__label" for="ev-query">
-          Buscar equipe ou projeto
-        </label>
-        <div class="ev-search__field">
-          <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false">
-            <circle cx="11" cy="11" r="7"></circle>
-            <path d="m20 20-4-4"></path>
-          </svg>
-          <input
-            id="ev-query"
-            type="search"
-            data-ev-query
-            placeholder="Ex.: Hypno, Rota Dourada"
-            autocomplete="off"
-            spellcheck="false"
-          />
-        </div>
-        <p class="ev-search__status" data-ev-status aria-live="polite">
-          {total} projetos
-        </p>
-      </div>
-
-      <div class="ev-table">
-        <div class="ev-row ev-row--head" aria-hidden="true">
-          <span>#</span>
-          <span>Equipe e projeto</span>
-          {CRITERIA.map((c) => (
-            <span class="ev-col-score" title={`${c.name} (${c.max})`}>
-              {c.short}
-              <small>/{c.max}</small>
-            </span>
-          ))}
-          <span class="ev-col-score">
-            Soma<small>/100</small>
-          </span>
-          <span class="ev-col-score" title="Penalidade de prazo e ajustes da coordenação">
-            Penal.
-          </span>
-          <span class="ev-col-grade">
-            Nota<small>/100</small>
-          </span>
-          <span class="ev-col-score">Coef.</span>
-        </div>
-
-        <ol class="ev-list" data-ev-list>
-          {ranking.projects.map((p) => (
-            <EvaluationRow p={p} />
-          ))}
-        </ol>
-        <p class="ev-empty" data-ev-empty hidden>
-          Nenhuma equipe ou projeto com esse nome.
-        </p>
-      </div>
-      <p class="ev-note">
-        Penalidade: desconto de 0,5 ponto por commit depois do prazo e ajustes definidos pela coordenação.
-        Coeficiente: nota dividida por 100.
+      <p>
+        As notas são enviadas só para cada equipe. Em breve, aqui mesmo, a equipe vai consultar o resultado
+        com o nome da equipe e o e-mail de um dos integrantes.
       </p>
     </section>
   </div>
