@@ -1,5 +1,5 @@
 // Cloudflare Pages Function: só o sorteio da organização (/sorteio*, /api/sorteio*), a lista pública de equipes
-// (/api/equipes) e a avaliação entre colegas (/feedback, /api/feedback/*) passam por aqui (public/_routes.json); o resto
+// (/api/equipes), a consulta da avaliação técnica (/api/avaliacao) e a avaliação entre colegas (/feedback, /api/feedback/*) passam por aqui (public/_routes.json); o resto
 // do site continua estático. A lógica fica em src/server (testada no Vitest)
 import { CacheAttemptStore, MemoryAttemptStore, type AttemptStore } from '../src/server/sorteio/attempts';
 import type { SorteioEnv } from '../src/server/sorteio/config';
@@ -7,10 +7,11 @@ import { handleSorteio, isSorteioPath } from '../src/server/sorteio/handler';
 import { handleTeams, type EdgeCache, type TeamsEnv } from '../src/server/equipes/proxy';
 import type { FeedbackEnv } from '../src/server/feedback/config';
 import { handleFeedback, isFeedbackPath } from '../src/server/feedback/handler';
+import { EVALUATION_API, handleEvaluation, type EvaluationEnv } from '../src/server/avaliacao/handler';
 
 interface PagesContext {
   request: Request;
-  env: SorteioEnv & TeamsEnv & FeedbackEnv;
+  env: SorteioEnv & TeamsEnv & FeedbackEnv & EvaluationEnv;
   next(): Promise<Response>;
 }
 
@@ -29,6 +30,15 @@ export const onRequest = async (context: PagesContext): Promise<Response> => {
     return handleTeams(context.request, context.env, {
       fetch: (input, init) => fetch(input, init),
       cache: edge ?? null,
+    });
+  }
+  if (url.pathname === EVALUATION_API) {
+    const edge = (globalThis as { caches?: { default?: unknown } }).caches?.default as EdgeCache | undefined;
+    return handleEvaluation(context.request, context.env, {
+      fetch: (input, init) => fetch(input, init),
+      cache: edge ?? null,
+      attempts: attemptStore(),
+      sleep: (ms) => new Promise((resolve) => setTimeout(resolve, ms)),
     });
   }
   const notFound = () =>

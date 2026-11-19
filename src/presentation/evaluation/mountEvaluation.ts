@@ -1,7 +1,7 @@
-// efeitos e busca da página /avaliacao. O HTML já chega com o texto final; aqui cada bloco entra quando aparece na
+// efeitos e consulta da página /avaliacao. O HTML já chega com o texto final; aqui cada bloco entra quando aparece na
 // tela, como na formação das equipes do sorteio: o texto embaralha em caracteres de terminal e trava no valor certo,
 // numa cascata leve. No fundo, uma chuva de código bem fraca. "Reduzir movimento" desliga tudo isso
-import { normalizeSearch } from '@domain/evaluation/Ranking';
+import { setupConsult } from './consult';
 import { scrambleFrame } from './scramble';
 
 // chuva do fundo com katakana; o texto embaralha só com letras e números de largura parecida (não empurra o layout)
@@ -130,40 +130,16 @@ function rain(canvas: HTMLCanvasElement): void {
   requestAnimationFrame(frame);
 }
 
-function setupSearch(): void {
-  const input = document.querySelector<HTMLInputElement>('[data-ev-query]');
-  const status = document.querySelector<HTMLElement>('[data-ev-status]');
-  const empty = document.querySelector<HTMLElement>('[data-ev-empty]');
-  const rows = [...document.querySelectorAll<HTMLElement>('[data-ev-row]')];
-  if (!input || !status || !empty) return;
-  const total = rows.length;
-  const apply = () => {
-    const needle = normalizeSearch(input.value);
-    let shown = 0;
-    rows.forEach((row) => {
-      const match = needle === '' || (row.dataset['search'] ?? '').includes(needle);
-      row.hidden = !match;
-      if (!match) return;
-      shown++;
-      // a linha achada aparece na hora (a busca não espera o scroll)
-      if (needle !== '') reveal(row, shown - 1);
-    });
-    empty.hidden = shown > 0;
-    status.textContent =
-      needle === '' ? `${total} projetos` : `${shown} de ${total} ${shown === 1 ? 'projeto' : 'projetos'}`;
-  };
-  input.addEventListener('input', apply);
-  // Esc limpa a busca
-  input.addEventListener('keydown', (event) => {
-    if (event.key !== 'Escape' || input.value === '') return;
-    input.value = '';
-    apply();
+// colorOf: cor do cartão de cada equipe (tipo do Pokémon), injetada pela página
+export function mountEvaluation(colorOf: (team: string) => string): void {
+  const reduced = reducedMotion();
+  // resultado da equipe: entra com o mesmo efeito dos blocos da página (embaralha e trava)
+  setupConsult(colorOf, (card) => {
+    if (reduced) return;
+    card.classList.add('ev-wait');
+    reveal(card, 0);
   });
-}
-
-export function mountEvaluation(): void {
-  setupSearch();
-  if (reducedMotion()) return;
+  if (reduced) return;
   document.documentElement.classList.add('ev-js');
   watchReveals();
   countUp();

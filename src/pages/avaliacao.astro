@@ -21,7 +21,8 @@ const data = await serverContainer().getLandingPage.execute();
 </PageLayout>
 
 <script>
+  import { teamTypeColor } from '@composition/evaluation';
   import { mountEvaluation } from '@presentation/evaluation/mountEvaluation';
 
-  mountEvaluation();
+  mountEvaluation(teamTypeColor);
 </script>

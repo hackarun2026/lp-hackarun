@@ -55,10 +55,53 @@ const scale = [
       </ul>
     </div>
 
+    <section class="ev-block ev-access" aria-labelledby="ev-access">
+      <h2 class="ev-block__title" id="ev-access">
+        <span aria-hidden="true">01</span> Notas da sua equipe
+      </h2>
+      <p class="ev-access__lead">
+        Cada equipe vê só o próprio resultado. Informe o nome da equipe e o e-mail de qualquer integrante, o
+        mesmo usado na inscrição.
+      </p>
+      <form class="ev-form" data-ev-form novalidate>
+        <label class="ev-field">
+          <span>Nome da equipe</span>
+          <input
+            name="team"
+            type="text"
+            required
+            maxlength="80"
+            autocomplete="off"
+            placeholder="Ex.: Equipe Pikachu"
+          />
+        </label>
+        <label class="ev-field">
+          <span>E-mail de um integrante</span>
+          <input
+            name="email"
+            type="email"
+            required
+            maxlength="200"
+            autocomplete="email"
+            inputmode="email"
+            placeholder="nome@email.com"
+          />
+        </label>
+        <button class="ev-form__submit" type="submit" data-ev-submit>
+          Ver resultado
+        </button>
+        <p class="ev-form__status" data-ev-form-status role="status" aria-live="polite"></p>
+      </form>
+      <noscript>
+        <p class="ev-form__status">Ative o JavaScript para consultar a nota da equipe.</p>
+      </noscript>
+      <div class="ev-result" data-ev-result hidden tabindex="-1"></div>
+    </section>
+
     <div class="ev-split">
       <section class="ev-block" aria-labelledby="ev-criteria">
         <h2 class="ev-block__title" id="ev-criteria">
-          <span aria-hidden="true">01</span> Critérios
+          <span aria-hidden="true">02</span> Critérios
         </h2>
         <ul class="ev-criteria">
           {CRITERIA.map((c) => (
@@ -80,7 +123,7 @@ const scale = [
 
       <section class="ev-block" aria-labelledby="ev-method">
         <h2 class="ev-block__title" id="ev-method">
-          <span aria-hidden="true">02</span> Como avaliamos
+          <span aria-hidden="true">03</span> Como avaliamos
         </h2>
         <ol class="ev-method">
           {method.map((line) => (
@@ -89,15 +132,5 @@ const scale = [
         </ol>
       </section>
     </div>
-
-    <section class="ev-block ev-soon" aria-labelledby="ev-access">
-      <h2 class="ev-block__title" id="ev-access">
-        <span aria-hidden="true">03</span> Notas da sua equipe
-      </h2>
-      <p>
-        As notas são enviadas só para cada equipe. Em breve, aqui mesmo, a equipe vai consultar o resultado
-        com o nome da equipe e o e-mail de um dos integrantes.
-      </p>
-    </section>
   </div>
 </section>

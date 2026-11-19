@@ -19,6 +19,10 @@ function doPost(e) {
   }
   // gemas dos NPCs (Gems.gs): mesma chave do sorteio, vem só da função do site
   if (body && typeof body.action === 'string' && body.action.indexOf('gems-') === 0) return gemsAction_(body);
+  // avaliação técnica (Evaluation.gs): consulta da nota de uma equipe, mesma chave do sorteio, só da função do site
+  if (body && typeof body.action === 'string' && body.action.indexOf('evaluation-') === 0) {
+    return evaluationAction_(body);
+  }
   // primeiro filtro, barato: honeypot preenchido ou formulário enviado rápido demais
   if (!body || isBot_(body)) return json_({ ok: false, error: 'invalid' });
   // cadastro de mentor: outro fluxo e outra aba (Mentors.gs); não passa pelo prazo nem pelas vagas da inscrição

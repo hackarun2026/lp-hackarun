@@ -27,11 +27,14 @@ describe('sorteio no site · o que vai e o que não vai para produção', () => 
     expect(integration).toMatch(/apply: 'serve'/);
   });
 
-  it('a função da Cloudflare só roda nos caminhos do sorteio, das gemas e da lista de equipes (o resto segue estático)', () => {
+  it('a função da Cloudflare só roda nos caminhos do sorteio, das gemas, da lista de equipes e da consulta da avaliação (o resto segue estático)', () => {
     const routes = JSON.parse(read('public/_routes.json')) as { include: string[]; exclude: string[] };
     expect(
       routes.include.every(
-        (path) => /^\/(api\/)?(sorteio|feedback|gemas|insignias)/.test(path) || path === '/api/equipes',
+        (path) =>
+          /^\/(api\/)?(sorteio|feedback|gemas|insignias)/.test(path) ||
+          path === '/api/equipes' ||
+          path === '/api/avaliacao',
       ),
     ).toBe(true);
     expect(routes.include).toContain('/api/equipes');
@@ -52,6 +55,8 @@ describe('sorteio no site · o que vai e o que não vai para produção', () => 
       ...walk(join(ROOT, 'src/infrastructure/gems')),
       ...walk(join(ROOT, 'src/presentation/views/gems')),
       join(ROOT, 'src/composition/draw.ts'),
+      ...walk(join(ROOT, 'src/presentation/evaluation')),
+      join(ROOT, 'src/composition/evaluation.ts'),
     ];
     for (const file of browserFiles) {
       expect(readFileSync(file, 'utf8'), file).not.toMatch(/SORTEIO_TOKEN|token|script\.google\.com/i);
