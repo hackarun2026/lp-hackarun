@@ -77,7 +77,10 @@ const { p } = Astro.props;
           <dd>{formatCoefficient(coefficientOf(p.grade))}</dd>
         </div>
       </dl>
-      <p class="ev-more__theme">Tema: {p.theme}</p>
+      <p class="ev-more__theme">
+        <span class="sr-only">Tema: </span>
+        {p.theme}
+      </p>
       <p class="ev-more__summary">{p.summary}</p>
     </div>
   </details>
