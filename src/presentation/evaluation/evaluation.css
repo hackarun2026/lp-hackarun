@@ -301,16 +301,16 @@
 .ev-form {
   display: grid;
   gap: var(--space-4);
-  max-width: 44rem;
+  max-width: 58rem;
   padding: var(--space-5);
   border: 1px solid var(--surface-line);
   background: var(--glass-bg);
   clip-path: var(--clip-card);
 }
 
-@media (min-width: 720px) {
+@media (min-width: 900px) {
   .ev-form {
-    grid-template-columns: 1fr 1fr auto;
+    grid-template-columns: minmax(0, 1fr) minmax(0, 1fr) auto;
     align-items: end;
   }
 
