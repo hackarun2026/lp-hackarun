@@ -8,7 +8,8 @@ import {
   matchesQuery,
   type EvaluatedProject,
 } from '@domain/evaluation/Ranking';
-import { evaluationRanking } from '@composition/evaluation';
+import { evaluationRanking, finalistColors } from '@composition/evaluation';
+import { distinctTypes } from '@presentation/formatters/pokemonTypes';
 import { scrambleFrame } from '@presentation/evaluation/scramble';
 import { formatCoefficient, formatGrade, formatPenalty } from '@presentation/formatters/evaluationFormat';
 
@@ -115,5 +116,22 @@ describe('formatação e efeito', () => {
     expect(scrambleFrame('86,99', 0, pick)).toBe('##,##');
     expect(scrambleFrame('Equipe Muk', 0.5, pick)).toBe('Equip# ###');
     expect(scrambleFrame('Equipe Muk', 1, pick)).toBe('Equipe Muk');
+  });
+});
+
+describe('cores das finalistas', () => {
+  it('cada finalista ganha um tipo diferente; quem tem um tipo só escolhe primeiro', () => {
+    const picked = distinctTypes([
+      { key: 'Golbat', types: ['poison', 'flying'] },
+      { key: 'Nidoking', types: ['poison', 'ground'] },
+      { key: 'Muk', types: ['poison'] },
+    ]);
+    expect(Object.fromEntries(picked)).toEqual({ Muk: 'poison', Golbat: 'flying', Nidoking: 'ground' });
+  });
+
+  it('as 7 finalistas oficiais ficam com 7 cores diferentes', () => {
+    const colors = finalistColors(evaluationRanking());
+    expect(colors.size).toBe(7);
+    expect(new Set(colors.values()).size).toBe(7);
   });
 });
