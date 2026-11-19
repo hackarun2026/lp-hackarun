@@ -25,7 +25,7 @@ function setup() {
   const script = new AppsScriptSandbox();
   script.seed(PEOPLE);
   script.properties['SORTEIO_TOKEN'] = TOKEN;
-  const sheet = script.book.insertSheet('Avaliação');
+  const sheet = script.book.insertSheet('Avaliação técnica');
   sheet.appendRow(HEADERS);
   sheet.appendRow([
     1,
@@ -111,7 +111,7 @@ describe('Apps Script · avaliação técnica', () => {
   it('sem a aba de notas responde erro de servidor, sem vazar nada', () => {
     const { script, lookup } = setup();
     script.book.sheets.splice(
-      script.book.sheets.findIndex((s) => s.name === 'Avaliação'),
+      script.book.sheets.findIndex((s) => s.name === 'Avaliação técnica'),
       1,
     );
     expect(lookup('Equipe Mew', 'hr26-aaaaaa@exemplo.com')).toEqual({ ok: false, error: 'server' });

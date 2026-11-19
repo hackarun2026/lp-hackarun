@@ -1,7 +1,7 @@
 // Avaliação técnica (resultado da entrega final): cada equipe consulta só a própria nota, informando o nome da equipe e
-// o e-mail de um integrante. As notas ficam na aba "Avaliação" (fora do site e do repositório público). Vem só da função
+// o e-mail de um integrante. As notas ficam na aba "Avaliação técnica" (fora do site e do repositório público). Vem só da função
 // do site, com a mesma chave do sorteio. Só leitura: não grava nada na planilha
-const EVALUATION_SHEET = 'Avaliação';
+const EVALUATION_SHEET = 'Avaliação técnica';
 const EVALUATION_HEADERS = [
   'Posição',
   'Equipe',
