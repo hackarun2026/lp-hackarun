@@ -1,0 +1,84 @@
+---
+// uma linha da classificação geral: resumo (posição, equipe, projeto e notas) e, ao abrir, as notas por critério
+// (no celular elas não cabem na linha), o tema e o resumo do projeto
+import { CRITERIA, coefficientOf, normalizeSearch, type EvaluatedProject } from '@domain/evaluation/Ranking';
+import { formatCoefficient, formatGrade, formatPenalty } from '@presentation/formatters/evaluationFormat';
+
+interface Props {
+  p: EvaluatedProject;
+}
+
+const { p } = Astro.props;
+---
+
+<li
+  class:list={['ev-item', { 'ev-item--finalist': p.finalist }]}
+  data-ev-row
+  data-search={normalizeSearch(`${p.team} ${p.project}`)}
+>
+  <details>
+    <summary class="ev-row">
+      <span class="ev-rank">{p.rank}</span>
+      <span class="ev-name">
+        <span class="ev-name__team" data-ev-scramble>
+          Equipe {p.team}
+        </span>
+        <span class="ev-name__project" data-ev-scramble>
+          {p.project}
+        </span>
+        {p.finalist && <span class="ev-badge">Finalista</span>}
+      </span>
+      {CRITERIA.map((c) => (
+        <span class="ev-col-score">
+          <span class="sr-only">{c.name}: </span>
+          <span data-ev-number>{p.scores[c.key]}</span>
+        </span>
+      ))}
+      <span class="ev-col-score">
+        <span class="sr-only">Soma: </span>
+        <span data-ev-number>{p.sum}</span>
+      </span>
+      <span
+        class:list={['ev-col-score', { 'ev-pen': p.penalty < 0 }]}
+
+        data-ev-number
+      >
+        {formatPenalty(p.penalty)}
+      </span>
+      <span class="ev-col-grade">
+        <span class="sr-only">Nota: </span>
+        <strong data-ev-number>{formatGrade(p.grade)}</strong>
+      </span>
+      <span class="ev-col-score" data-ev-number>
+        {formatCoefficient(coefficientOf(p.grade))}
+      </span>
+      <span class="ev-chevron" aria-hidden="true" />
+    </summary>
+    <div class="ev-more">
+      <dl class="ev-more__scores">
+        {CRITERIA.map((c) => (
+          <div>
+            <dt>{c.name}</dt>
+            <dd>
+              {p.scores[c.key]}/{c.max}
+            </dd>
+          </div>
+        ))}
+        <div>
+          <dt>Soma</dt>
+          <dd>{p.sum}/100</dd>
+        </div>
+        <div>
+          <dt>Penalidade</dt>
+          <dd>{formatPenalty(p.penalty)}</dd>
+        </div>
+        <div>
+          <dt>Coeficiente</dt>
+          <dd>{formatCoefficient(coefficientOf(p.grade))}</dd>
+        </div>
+      </dl>
+      <p class="ev-more__theme">Tema: {p.theme}</p>
+      <p class="ev-more__summary">{p.summary}</p>
+    </div>
+  </details>
+</li>

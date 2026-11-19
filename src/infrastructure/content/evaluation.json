@@ -1,0 +1,850 @@
+{
+  "teams": [
+    {
+      "rank": 1,
+      "team": "Golbat",
+      "project": "Capim Dourado Experience",
+      "theme": "Engajamento e fidelização dos visitantes",
+      "finalist": true,
+      "scores": {
+        "adherence": 23,
+        "implementation": 23,
+        "innovation": 16,
+        "ux": 14,
+        "pitch": 14
+      },
+      "sum": 90,
+      "penalty": 0,
+      "grade": 90.0,
+      "summary": "PWA que transforma a visita ao Capim Dourado Shopping em um jogo: o visitante entra por QR sem instalar nada, faz check-in por localização, cumpre a caça ao tesouro da temporada lendo QRs escondidos, gira uma roleta de cupons (em dobro na 'hora dourada', nos horários de baixo movimento) e troca moedas por cupons de uso único, que a loja baixa em um painel próprio. Uma capivara 3D (Capi) guia a jornada e há chat por regras, vitrine por trilha e mapa dos andares. As temporadas (Natal, Páscoa, Black Friday) trocam apenas os tokens de design da mesma biblioteca de componentes. O objetivo é premiar presença e exploração, não o gasto, para criar motivo de retorno semanal."
+    },
+    {
+      "rank": 2,
+      "team": "Tyranitar",
+      "project": "Capi",
+      "theme": "Jornada de compra digital e física",
+      "finalist": true,
+      "scores": {
+        "adherence": 23,
+        "implementation": 23,
+        "innovation": 16,
+        "ux": 14,
+        "pitch": 13
+      },
+      "sum": 89,
+      "penalty": 0,
+      "grade": 89.0,
+      "summary": "PWA único com três interfaces: app do cliente, painel do lojista (/loja) e painel da administração (/shopping). O cliente pergunta à Capi (assistente com Claude) por texto, foto ou link de um produto visto na internet; ela busca no catálogo das lojas do shopping, o cliente reserva pelo botão do cartão (Pix simulado ou pagar na loja, com cupom), a loja confirma informando a hora e o app traça a rota no mapa 3D. No balcão, o vendedor lê o QR da carteira, vê a ficha de interesses do cliente e registra a compra, que vira pontos. As buscas sem resultado alimentam relatórios de demanda para lojistas e para o shopping, cruzados com as lojas vagas."
+    },
+    {
+      "rank": 3,
+      "team": "Nidoking",
+      "project": "VitrineIQ",
+      "theme": "Inteligência comercial para lojistas",
+      "finalist": true,
+      "scores": {
+        "adherence": 23,
+        "implementation": 24,
+        "innovation": 16,
+        "ux": 12,
+        "pitch": 14
+      },
+      "sum": 89,
+      "penalty": -0.5,
+      "grade": 88.5,
+      "summary": "Plataforma de inteligência comercial para lojistas do Capim Dourado Shopping. Cruza três sinais anônimos — contagem de quem passa, olha e entra pela vitrine (câmera processada na borda), motivo da venda perdida registrado pelo vendedor em 1 toque (Modo Balcão) e o que o consumidor procura (Concierge via QR, sem cadastro) — com contexto real (clima de Palmas, feriados, eventos e cinema do shopping) para gerar um Score de Oportunidade. O lojista recebe recomendação de ação e plano (Gemini ou heurística), publica uma oferta/publicidade na ala sem depender de desconto, e o consumidor a recebe no Concierge. Tem três perfis com login (admin do shopping, lojista e vendedor), isolamento por loja e maquete 3D do shopping com 188 lojas."
+    },
+    {
+      "rank": 4,
+      "team": "Wartortle",
+      "project": "Golden Park",
+      "theme": "Mobilidade e estacionamento",
+      "finalist": true,
+      "scores": {
+        "adherence": 23,
+        "implementation": 24,
+        "innovation": 15,
+        "ux": 14,
+        "pitch": 12
+      },
+      "sum": 88,
+      "penalty": 0,
+      "grade": 88.0,
+      "summary": "Sistema para o estacionamento do Capim Dourado Shopping que indica, na entrada, a região mais adequada para cada veículo a partir de disponibilidade (50%), distância pela rota (30%) e fluxo recente (20%), sem exigir aplicativo. O motorista usa um totem (tipo de veículo e tipo de vaga: comum, PcD ou pessoa idosa), recebe a região com a justificativa e um ticket com QR Code. O QR abre no celular um localizador com mapa 3D e a rota até a região e, depois de estacionar, mostra onde o carro ficou. A operação acompanha um painel em tempo real com mapa dos três níveis, indicadores, operação de tickets, vagas reservadas e um simulador de cenários."
+    },
+    {
+      "rank": 5,
+      "team": "Dragonair",
+      "project": "Ronda Viva",
+      "theme": "Eficiência operacional e infraestrutura",
+      "finalist": true,
+      "scores": {
+        "adherence": 23,
+        "implementation": 23,
+        "innovation": 15,
+        "ux": 13,
+        "pitch": 14
+      },
+      "sum": 88,
+      "penalty": 0,
+      "grade": 88.0,
+      "summary": "Sistema web responsivo para a ronda operacional do shopping. O funcionário lê o QR da zona no celular, sem login, e toca OK, Atenção ou Problema; ao descrever um problema, um modelo local treinado pela equipe sugere categoria, prioridade e equipe, e uma regra fixa força P1 e 'avise a brigada pelo rádio' para fumaça, fogo, gás, choque ou pessoa presa. O gestor confirma a sugestão, acompanha a fila em três colunas e vê num mapa por piso as zonas que ninguém conferiu no prazo (cinza). Cada ocorrência tem linha do tempo que não pode ser apagada, e o painel mostra indicadores por zona e equipe, nunca por pessoa."
+    },
+    {
+      "rank": 6,
+      "team": "Lugia",
+      "project": "Ponte",
+      "theme": "Jornada de compra digital e física",
+      "finalist": true,
+      "scores": {
+        "adherence": 23,
+        "implementation": 23,
+        "innovation": 16,
+        "ux": 13,
+        "pitch": 13
+      },
+      "sum": 88,
+      "penalty": 0,
+      "grade": 88.0,
+      "summary": "Web app para quem viu um produto na internet e quer saber se existe hoje no shopping. O cliente busca por texto, foto ou print; a Ponte lista as lojas que têm o produto 'igual' ou 'parecido', com motivo, e mostra um comparativo online × shopping (preço, frete, prazo) que admite quando o online é mais barato. Com um toque e um apelido, sem cadastro, o cliente pede 'Separa pra mim' ou 'Quero testar na loja', recebe código e QR, e acompanha o status; o lojista confirma e faz o check-in. O shopping tem um painel com conversão, demanda não atendida e logs por código de rastreio."
+    },
+    {
+      "rank": 7,
+      "team": "Muk",
+      "project": "Rota Dourada",
+      "theme": "Acessibilidade e comunicação universal",
+      "finalist": true,
+      "scores": {
+        "adherence": 23,
+        "implementation": 22,
+        "innovation": 16,
+        "ux": 13,
+        "pitch": 13
+      },
+      "sum": 87,
+      "penalty": 0,
+      "grade": 87.0,
+      "summary": "Aplicativo de navegação indoor para o Capim Dourado Shopping que se adapta às necessidades declaradas pelo visitante (cadeirante, mobilidade reduzida, cegueira, baixa visão, surdez, fala, TEA, intelectual), com ou sem conta. O usuário escolhe a loja no mapa, na busca ou na lista e recebe a rota adequada ao perfil, com instruções em texto, voz e vibração em português, inglês e espanhol. O mapa e a rede de corredores foram gerados da Planta Mix oficial, com 194 pontos; quando não existe caminho acessível confirmado, o app informa isso e oferece alternativas em vez de mostrar outro percurso. Há ainda conversa por escrito com atendente e tela de SOS para pessoas surdas ou com deficiência na fala."
+    },
+    {
+      "rank": 8,
+      "team": "Hypno",
+      "project": "Raiz",
+      "theme": "Engajamento e fidelização dos visitantes",
+      "finalist": false,
+      "scores": {
+        "adherence": 23,
+        "implementation": 20,
+        "innovation": 17,
+        "ux": 14,
+        "pitch": 13
+      },
+      "sum": 87,
+      "penalty": -0.01,
+      "grade": 86.99,
+      "summary": "PWA de fidelização em que o visitante entra com telefone + OTP, escaneia o QR Code da NFC-e do cupom fiscal (ou digita os 44 dígitos) e ganha 'sementes'. A chave identifica a loja pelo CNPJ e alimenta missões entre lojas/categorias, ritmo semanal, ranking da safra e resgate de prêmios com voucher de 6 caracteres válido por 10 minutos. Para o shopping, o ganho é medir recorrência identificada sem integrar com PDV; há uma API de parceiro (ofertas e métricas agregadas) protegida por chave."
+    },
+    {
+      "rank": 9,
+      "team": "Nidoqueen",
+      "project": "MidiaComercial",
+      "theme": "Inteligência comercial para lojistas",
+      "finalist": false,
+      "scores": {
+        "adherence": 23,
+        "implementation": 24,
+        "innovation": 16,
+        "ux": 13,
+        "pitch": 12
+      },
+      "sum": 88,
+      "penalty": -1.5,
+      "grade": 86.5,
+      "summary": "Ferramenta para o lojista do shopping (dono, gerente, atendente) que roda ao lado do PDV. Cruza vendas e estoque importados por CSV com o registro, no balcão, do que o cliente procurou e não levou (toque ou voz) e com a base de clientes da loja. Um motor de regras entrega no máximo 3 oportunidades por semana, cada uma com evidência, amostra e limitação. Um agente de vendas sugere quais clientes (com consentimento) contatar para um produto parado e prepara a mensagem; a pessoa aprova e envia pelo WhatsApp. Planos de ação medem o antes/depois."
+    },
+    {
+      "rank": 10,
+      "team": "Heracross",
+      "project": "Guia Dourado",
+      "theme": "Acessibilidade e comunicação universal",
+      "finalist": false,
+      "scores": {
+        "adherence": 23,
+        "implementation": 22,
+        "innovation": 17,
+        "ux": 13,
+        "pitch": 11
+      },
+      "sum": 86,
+      "penalty": 0,
+      "grade": 86.0,
+      "summary": "PWA aberto por QR Code/NFC, sem instalação nem cadastro, para visitantes com deficiência, idosos e estrangeiros do Capim Dourado Shopping. Oferece busca de lojas, mapa por piso e rota passo a passo por perfil (sem degraus, mobilidade reduzida, baixa visão, sensorial), leitura em voz, Libras via VLibras, três idiomas, modo conversa com o atendente, prancha de pictogramas, leitor de letreiro por câmera e pedido de ajuda com localização que cai em uma Central da equipe. Nesta entrega a tela inicial passou a perguntar 'Como você prefere se comunicar?' com um agente de voz (esfera dourada) e o guia por câmera ganhou escuta contínua no aparelho."
+    },
+    {
+      "rank": 11,
+      "team": "Poliwhirl",
+      "project": "Conecta Shopping",
+      "theme": "Eventos, entretenimento e experiências",
+      "finalist": false,
+      "scores": {
+        "adherence": 22,
+        "implementation": 24,
+        "innovation": 14,
+        "ux": 13,
+        "pitch": 11
+      },
+      "sum": 84,
+      "penalty": 0,
+      "grade": 84.0,
+      "summary": "Agenda pública mobile-first dos eventos do shopping, sem aplicativo e sem cadastro, com busca, filtros (data, categoria, acessibilidade), detalhes, .ics/Google Agenda, compartilhamento, 'Salvos' e 'Tenho interesse'. Depois do evento o visitante avalia em 30 segundos (nota, destaques, comentário) e pode sugerir novos eventos. A equipe do shopping tem área administrativa com papéis para cadastrar ou importar eventos por planilha, criar links curtos e QR Codes por canal, moderar avaliações, ler o mural de sugestões e acompanhar um painel em que cada número é rotulado como Medido, Estimado ou Indisponível. Inclui modo painel digital (/painel) para telas e totens e política de privacidade com retenção de 30 dias."
+    },
+    {
+      "rank": 12,
+      "team": "Persian",
+      "project": "Achô",
+      "theme": "Jornada de compra digital e física",
+      "finalist": false,
+      "scores": {
+        "adherence": 21,
+        "implementation": 22,
+        "innovation": 14,
+        "ux": 13,
+        "pitch": 13
+      },
+      "sum": 83,
+      "penalty": 0,
+      "grade": 83.0,
+      "summary": "Plataforma web de social commerce para shoppings: o consumidor descobre lojas e produtos em um feed de avaliações, compra na loja física e o lojista gera um código/QR de uso único com o valor da compra. Ao validar o código, o consumidor ganha o direito de publicar uma avaliação com selo 'Compra verificada', acumula pontos do programa de fidelidade daquela loja em uma carteira única e ganha XP em um sistema de missões. O lojista tem painel próprio com campanhas, programa de fidelidade, vouchers, métricas e reputação; há também um perfil de administração. A recomendação (Achô Match) é por regras determinísticas, sem IA, e isso é declarado."
+    },
+    {
+      "rank": 13,
+      "team": "Squirtle",
+      "project": "Guia do Shopping",
+      "theme": "Descoberta de produtos, lojas e promoções",
+      "finalist": false,
+      "scores": {
+        "adherence": 21,
+        "implementation": 22,
+        "innovation": 15,
+        "ux": 13,
+        "pitch": 12
+      },
+      "sum": 83,
+      "penalty": 0,
+      "grade": 83.0,
+      "summary": "Aplicativo Android para o visitante descobrir em qual loja do shopping há o produto que procura e chegar até ela. A busca pode ser por nome, por pergunta em linguagem natural ao 'Guia' (LLM restrito ao catálogo) ou por foto (rótulos extraídos no aparelho). A ficha da loja mostra andar, produtos e promoções, e uma bússola com voz orienta até a loja; há ainda roteiro de várias paradas com orçamento e tempo, 'Onde estacionei' e 'Ofertas no caminho'. Uma API Laravel publicada serve o catálogo e intermedeia as chamadas ao modelo."
+    },
+    {
+      "rank": 14,
+      "team": "Rapidash",
+      "project": "ShoppDash",
+      "theme": "Eventos, entretenimento e experiências",
+      "finalist": false,
+      "scores": {
+        "adherence": 23,
+        "implementation": 23,
+        "innovation": 15,
+        "ux": 13,
+        "pitch": 10
+      },
+      "sum": 84,
+      "penalty": -1.5,
+      "grade": 82.5,
+      "summary": "Plataforma web para o shopping planejar, medir e avaliar eventos. O visitante acessa pelo celular, sem instalar aplicativo: desliza cartões de eventos (quero/passo), vota em ideias ainda não confirmadas, marca presença provável, faz check-in por QR Code e avalia depois. A administração tem um painel com indicadores ao vivo, validação de demanda com custo por interessado, funil por evento e recomendações cuja numeração é conferida contra os dados calculados pela aplicação."
+    },
+    {
+      "rank": 15,
+      "team": "Alakazam",
+      "project": "Fidelidade Shopping",
+      "theme": "Engajamento e fidelização dos visitantes",
+      "finalist": false,
+      "scores": {
+        "adherence": 22,
+        "implementation": 21,
+        "innovation": 13,
+        "ux": 13,
+        "pitch": 13
+      },
+      "sum": 82,
+      "penalty": 0,
+      "grade": 82.0,
+      "summary": "PWA de fidelização pensado como módulo do app do shopping, com três perfis na mesma aplicação: visitante, lojista e administração. O visitante acompanha campanhas em datas duplas (ex.: 11/11) com ofertas de grande desconto liberadas em lotes-surpresa para quem marcou 'Estou no shopping', resgata cupons de estoque limitado, comprova compras com um código de 6 dígitos que o lojista confirma no caixa e acumula pontos trocáveis por desconto ou estacionamento. Há ainda indicação com bônus para os dois lados e, agora, votação da programação (qual jogo passa no telão). O lojista publica ofertas relâmpago e confirma compras; a administração libera lotes, encerra a votação e vê números agregados."
+    },
+    {
+      "rank": 16,
+      "team": "Feraligatr",
+      "project": "Conflui",
+      "theme": "Fluxo e movimentação de pessoas",
+      "finalist": false,
+      "scores": {
+        "adherence": 22,
+        "implementation": 21,
+        "innovation": 14,
+        "ux": 13,
+        "pitch": 11
+      },
+      "sum": 81,
+      "penalty": 0,
+      "grade": 81.0,
+      "summary": "O Conflui é um painel administrativo que desenha um mapa de calor de ocupação sobre a planta real do shopping (2 pavimentos, 18 regiões), com visão ao vivo, calendário e histórico com linha do tempo hora a hora, cadastro de eventos e datas especiais, perfil do público por pesquisa agregada, relatórios com exportação CSV e um assistente de perguntas por regras. A administração filtra por pavimento, setor, data e horário para ver onde há concentração e onde há ociosidade. Os dados chegam por uma API de ingestão autenticada por chave, hoje alimentada por um simulador; há duas provas de conceito separadas de contagem de pessoas por vídeo/câmera. O MVP está publicado no Railway com modo demonstração somente leitura."
+    },
+    {
+      "rank": 17,
+      "team": "Magneton",
+      "project": "Magneton",
+      "theme": "Fluxo e movimentação de pessoas",
+      "finalist": false,
+      "scores": {
+        "adherence": 22,
+        "implementation": 20,
+        "innovation": 15,
+        "ux": 13,
+        "pitch": 12
+      },
+      "sum": 82,
+      "penalty": -1.0,
+      "grade": 81.0,
+      "summary": "Painel para a administração do shopping que mostra, sobre a planta real do Capim Dourado, onde as pessoas se concentram, onde está vazio e como isso muda ao longo do dia. Câmeras (na demo, celulares transmitindo por RTMP) alimentam um worker YOLO que conta pessoas, descarta a imagem e envia só o número por zona em janelas de 15 minutos a uma API Laravel. O painel React traz mapa de calor, ranking de zonas, frase-resumo em linguagem natural, curva do dia, modo ao vivo e relatórios (padrão da semana, dia, mês e período livre com comparação). A privacidade é regra de código: zona com menos de 5 pessoas não vira número em nenhuma resposta."
+    },
+    {
+      "rank": 18,
+      "team": "Charmander",
+      "project": "Acessa+",
+      "theme": "Acessibilidade e comunicação universal",
+      "finalist": false,
+      "scores": {
+        "adherence": 21,
+        "implementation": 20,
+        "innovation": 15,
+        "ux": 14,
+        "pitch": 11
+      },
+      "sum": 81,
+      "penalty": 0,
+      "grade": 81.0,
+      "summary": "Aplicativo de acessibilidade para visitantes de shopping, sem cadastro e sem exigir declaração de deficiência. O visitante combina preferências (texto ampliado, alto contraste, áudio, rotas sem escadas, preferir elevador, reduzir estímulos) e o app calcula rotas internas que respeitam essas restrições, com até cinco paradas, comparação entre a 'rota mais usada' e a rota adaptada, navegação passo a passo e mapa por piso. Completam: cartão de ajuda com frases prontas em português, inglês e espanhol, Ajuda+ (pedido de apoio em três passos) e, na entrega final, interface trilíngue, síntese de voz e um mapa colaborativo de alertas (piso molhado, elevador parado etc.) que influencia as rotas."
+    },
+    {
+      "rank": 19,
+      "team": "Zapdos",
+      "project": "Zaptos",
+      "theme": "Jornada de compra digital e física",
+      "finalist": false,
+      "scores": {
+        "adherence": 22,
+        "implementation": 19,
+        "innovation": 14,
+        "ux": 13,
+        "pitch": 13
+      },
+      "sum": 81,
+      "penalty": -1.0,
+      "grade": 80.0,
+      "summary": "Aplicativo web (PWA) em que o cliente busca um produto nas lojas do shopping, vê fotos, medidas e estoque, reserva uma unidade por 15 minutos, paga e recebe um comprovante com QR Code e código curto para retirar na loja no mesmo dia. O lojista tem painel com estoque, reservas do dia e validação da retirada por câmera ou código. O administrador vê vendas, comissão e lojas. Há ainda mapa com a planta do shopping e 'Ver na sua casa', que sobrepõe a foto do produto à imagem da câmera."
+    },
+    {
+      "rank": 20,
+      "team": "Onix",
+      "project": "Viva Capim",
+      "theme": "Eventos, entretenimento e experiências",
+      "finalist": false,
+      "scores": {
+        "adherence": 19,
+        "implementation": 23,
+        "innovation": 15,
+        "ux": 14,
+        "pitch": 8
+      },
+      "sum": 79,
+      "penalty": 0,
+      "grade": 79.0,
+      "summary": "Plataforma de experiência para o visitante do Capim Dourado Shopping: mapa 3D/2D reconstruído da planta com 262 destinos e rotas entre pisos, cartões de eventos e anúncios com página pública de evento (Google Agenda e .ics), avaliações por estrelas e programa de fidelidade opcional com resgate presencial no balcão. A equipe do shopping, lojistas e operadores de balcão usam um painel por perfil para publicar eventos e benefícios (com fila de aprovação), ativar cadastros e confirmar resgates. Há modo totem ('Toque para iniciar'), três idiomas e uma caça a três mascotes em pixel art como easter egg."
+    },
+    {
+      "rank": 21,
+      "team": "Flareon",
+      "project": "SmartMall",
+      "theme": "Eficiência operacional e infraestrutura",
+      "finalist": false,
+      "scores": {
+        "adherence": 21,
+        "implementation": 22,
+        "innovation": 11,
+        "ux": 13,
+        "pitch": 11
+      },
+      "sum": 78,
+      "penalty": 0,
+      "grade": 78.0,
+      "summary": "Sistema web para a administração do shopping registrar ocorrências, distribuir tarefas a profissionais de Limpeza, Manutenção e Segurança, executar checklists e acompanhar tudo num painel. Tem três perfis (administrador, supervisor, profissional operacional), relato público de problema pelo visitante sem login, com protocolo e triagem, rotinas que geram tarefas por horário ou intervalo e um módulo de avaliações de desempenho."
+    },
+    {
+      "rank": 22,
+      "team": "Arcanine",
+      "project": "Fluxo Inteligente",
+      "theme": "Fluxo e movimentação de pessoas",
+      "finalist": false,
+      "scores": {
+        "adherence": 23,
+        "implementation": 18,
+        "innovation": 14,
+        "ux": 13,
+        "pitch": 10
+      },
+      "sum": 78,
+      "penalty": 0,
+      "grade": 78.0,
+      "summary": "Painel para a administração do shopping entender onde há concentração de pessoas, onde há pouca circulação e como isso varia por horário. Eventos anônimos de passagem por zona (de câmeras ou do simulador) viram mapa de calor sobre a planta real do Capim Dourado (Térreo e Piso 2, 52 zonas), hotspots/coldspots, trajetos A → B, caminhos até um destino e matriz de tráfego entre setores. Inclui dashboard operacional com alertas de ocupação, tela de câmeras com detecção sobre vídeo e estacionamento com 752 vagas. No MVP os dados são simulados."
+    },
+    {
+      "rank": 23,
+      "team": "Ivysaur",
+      "project": "Hackarum-Yvisalro",
+      "theme": "Descoberta de produtos, lojas e promoções",
+      "finalist": false,
+      "scores": {
+        "adherence": 20,
+        "implementation": 20,
+        "innovation": 13,
+        "ux": 14,
+        "pitch": 10
+      },
+      "sum": 77,
+      "penalty": -1.0,
+      "grade": 76.0,
+      "summary": "Aplicação web mobile-first para o visitante do shopping buscar um produto, comparar a mesma oferta entre lojas, salvar desejos e alertas de preço, ver stories promocionais e seguir uma rota interna passo a passo até a loja. A WebAPI REST (/api/v1) cobre cadastro, sessão, catálogo, promoções e mapa sobre Supabase; sem Supabase o sistema entra em 'modo demonstração', com mapa e promoções servidos pela API em memória e catálogo/conta fictícios no navegador. A entrega final acrescenta a planta em escala de um shopping fictício de dois pisos (206 unidades), as rotas sobre o grafo de corredores e uma landing page para consumidores e lojistas em /sobre. Todos os dados (shopping 'Veredas Douradas', lojas, produtos, preços) são fictícios e sinalizados como tal."
+    },
+    {
+      "rank": 24,
+      "team": "Machoke",
+      "project": "FLUXO360",
+      "theme": "Fluxo e movimentação de pessoas",
+      "finalist": false,
+      "scores": {
+        "adherence": 21,
+        "implementation": 20,
+        "innovation": 15,
+        "ux": 12,
+        "pitch": 10
+      },
+      "sum": 78,
+      "penalty": -3.0,
+      "grade": 75.0,
+      "summary": "Plataforma de inteligência espacial para a administração do shopping: o vídeo das câmeras de CFTV é processado (detecção de pessoas, rastreamento com ids, ponto dos pés, homografia para a planta do piso) e vira mapas de calor de permanência e de circulação e rastros de trajetórias sobre a planta oficial. Um painel Streamlit de 7 telas (visão geral, mapa, ambientes, diagnósticos, recomendações com simulador e registro de antes/depois, relatórios com exportação CSV e 'como funciona') traduz isso em diagnósticos por urgência e planos de ação. Há guia rápido (tour), ajuda por tela, glossário e pixelização das pessoas (LGPD). O repositório inclui uma análise real de 10 s de vídeo da Praça de Eventos do Capim Dourado projetada na planta do térreo."
+    },
+    {
+      "rank": 25,
+      "team": "Donphan",
+      "project": "SmartMall Ops IA",
+      "theme": "Eficiência operacional e infraestrutura",
+      "finalist": false,
+      "scores": {
+        "adherence": 21,
+        "implementation": 22,
+        "innovation": 11,
+        "ux": 13,
+        "pitch": 8
+      },
+      "sum": 75,
+      "penalty": -1.0,
+      "grade": 74.0,
+      "summary": "Sistema web de gestão operacional para a administração do shopping. Visitantes e lojistas relatam ocorrências sem login por QR Code afixado no local (com foto ou vídeo); o sistema sugere tipo e prioridade por regras, e um supervisor aprova o chamado, que vira tarefa para uma equipe, ou o arquiva com motivo. Há Central de Controle com indicadores e alertas, tarefas em calendário e Kanban com checklist e evidências, manutenções programadas recorrentes, estoque com movimentações, equipes com disponibilidade, cadastro de equipamentos e relatórios. Três perfis (Administrador, Supervisor, Funcionário) têm permissões diferentes."
+    },
+    {
+      "rank": 26,
+      "team": "Charizard",
+      "project": "VitrineIA",
+      "theme": "Inteligência comercial para lojistas",
+      "finalist": false,
+      "scores": {
+        "adherence": 20,
+        "implementation": 20,
+        "innovation": 13,
+        "ux": 12,
+        "pitch": 10
+      },
+      "sum": 75,
+      "penalty": -1.0,
+      "grade": 74.0,
+      "summary": "Plataforma web em que o lojista do shopping publica questionários curtos; o visitante responde pelo celular, sem cadastro, e ganha pontos que troca por cupons validados no balcão. As respostas, sempre agregadas, alimentam para o lojista um painel com segmentos de público e oportunidades de venda cruzada calculadas por regras de associação (suporte, confiança, lift), com loja parceira sugerida e texto opcionalmente reescrito por IA generativa. O lojista também registra vendas, campanhas e cupons e acompanha faturamento e ticket médio."
+    },
+    {
+      "rank": 27,
+      "team": "Ho-Oh",
+      "project": "Shopping Analytics & Loyalty Hub",
+      "theme": "Inteligência comercial para lojistas",
+      "finalist": false,
+      "scores": {
+        "adherence": 21,
+        "implementation": 19,
+        "innovation": 16,
+        "ux": 12,
+        "pitch": 11
+      },
+      "sum": 79,
+      "penalty": -6.0,
+      "grade": 73.0,
+      "summary": "O consumidor cadastra a chave de 44 dígitos da NFC-e de suas compras e, ao somar R$ 150 no dia, recebe um voucher com QR Code de estacionamento grátis. Com esses dados consentidos, o lojista vê no seu portal o ticket médio da loja contra a média da categoria (só exibida com pelo menos 3 lojas, k-anonimato), horários de pico, afinidade de compras cruzadas por categoria e dispara um cupom para clientes inativos há 60 dias sem ver CPFs. A administração do shopping tem um painel com faturamento identificado por segmento, vouchers e campanhas. Tudo roda sobre uma API REST com JWT e três perfis."
+    },
+    {
+      "rank": 28,
+      "team": "Scizor",
+      "project": "Capim Dourado Connect",
+      "theme": "Jornada de compra digital e física",
+      "finalist": false,
+      "scores": {
+        "adherence": 20,
+        "implementation": 17,
+        "innovation": 12,
+        "ux": 13,
+        "pitch": 11
+      },
+      "sum": 73,
+      "penalty": 0,
+      "grade": 73.0,
+      "summary": "Protótipo web de novas funções para o aplicativo do shopping: o cliente entra por QR/link, navega por um catálogo com filtros, busca em linguagem natural (CapimAI) e comparativo entre lojas, favorita e monta uma reserva com produtos de lojas diferentes para experimentar presencialmente, sem pagamento online. Cada lojista vê só as solicitações da própria loja, confirma ou recusa e acompanha indicadores agregados. Há ainda mapa fictício de visita com paradas, missões e cupons ilustrativos."
+    },
+    {
+      "rank": 29,
+      "team": "Growlithe",
+      "project": "Growlithe",
+      "theme": "Engajamento e fidelização dos visitantes",
+      "finalist": false,
+      "scores": {
+        "adherence": 20,
+        "implementation": 19,
+        "innovation": 13,
+        "ux": 11,
+        "pitch": 11
+      },
+      "sum": 74,
+      "penalty": -1.5,
+      "grade": 72.5,
+      "summary": "Web app gamificado de fidelização para o shopping: o visitante aponta a câmera para QR Codes espalhados pelo shopping, sem instalar nada, ganha pontos, sobe de nível e cumpre missões (check-in, caça ao tesouro, Missão Relâmpago com pontos multiplicados). O shopping tem um painel para cadastrar checkpoints e imprimir QRs, criar missões, validar cupons de resgate e acompanhar um dashboard; a landing page com teste A/B e lista de espera é a prática sorteada. Na entrega final a equipe publicou o MVP na Vercel e criou um 'modo avaliador' que deixa a banca entrar sem e-mail e ver o painel como admin até 15/11."
+    },
+    {
+      "rank": 30,
+      "team": "Ursaring",
+      "project": "CapiBot",
+      "theme": "Atendimento e experiência de serviços",
+      "finalist": false,
+      "scores": {
+        "adherence": 21,
+        "implementation": 20,
+        "innovation": 13,
+        "ux": 11,
+        "pitch": 9
+      },
+      "sum": 74,
+      "penalty": -2.0,
+      "grade": 72.0,
+      "summary": "Web app mobile-first, sem login nem instalação, aberto por QR Code em totens do shopping: o ponto do QR informa onde o visitante está. O CapiBot oferece quatro atalhos (banheiros, praça de alimentação, lojas e cinema, serviços) e, para cada um, mostra a rota em mapa SVG com descrição textual ou registra uma reclamação com protocolo. A equipe do shopping recebe os chamados em um painel web, aceita, recusa, escala ou conclui, e o chat avisa o visitante de cada mudança; há indicadores de atendimento, uma página /atendimento com voz e foto e um FAQ acessível. Perguntas livres usam Gemini quando há chave e, sem ela, um fallback por palavra-chave."
+    },
+    {
+      "rank": 31,
+      "team": "Entei",
+      "project": "Guia Acessível do Capim Dourado Shopping",
+      "theme": "Acessibilidade e comunicação universal",
+      "finalist": false,
+      "scores": {
+        "adherence": 20,
+        "implementation": 18,
+        "innovation": 13,
+        "ux": 13,
+        "pitch": 8
+      },
+      "sum": 72,
+      "penalty": -0.5,
+      "grade": 71.5,
+      "summary": "App em Flutter que roda como totem de acessibilidade e como web app aberto por QR Code no celular. O visitante escolhe um destino e recebe rota passo a passo sobre um mapa de dois pisos, com bússola, direção, distância e uso do elevador, lida em voz alta se quiser. Há alto contraste em um toque, comunicação por pictogramas (CAA) que falam a frase, tela para digitar e o app falar em português, inglês ou espanhol, pedido de ajuda (SOS) e um painel de gestão com destinos mais buscados e mapas de calor."
+    },
+    {
+      "rank": 32,
+      "team": "Aerodactyl",
+      "project": "CapimParking",
+      "theme": "Mobilidade e estacionamento",
+      "finalist": false,
+      "scores": {
+        "adherence": 19,
+        "implementation": 21,
+        "innovation": 10,
+        "ux": 12,
+        "pitch": 9
+      },
+      "sum": 71,
+      "penalty": 0,
+      "grade": 71.0,
+      "summary": "Totem/web para o estacionamento do Capim Dourado Shopping: o motorista escolhe o tipo de vaga (comum, idoso, PCD, neurodivergente, elétrico, moto), opcionalmente o setor em um select ou tocando na planta dos subsolos, e recebe um ticket com código de 8 caracteres, vaga, setor, andar e horário limite da tolerância. Na saída digita o código e vê o tempo e o valor (15 min grátis, depois R$ 5,00 por hora). Se o setor estiver cheio, o sistema sugere a vaga mais próxima em outro setor. Sem login."
+    },
+    {
+      "rank": 33,
+      "team": "Espeon",
+      "project": "Capim Dourado Smart Operations",
+      "theme": "Eficiência operacional e infraestrutura",
+      "finalist": false,
+      "scores": {
+        "adherence": 21,
+        "implementation": 16,
+        "innovation": 13,
+        "ux": 12,
+        "pitch": 9
+      },
+      "sum": 71,
+      "penalty": -0.5,
+      "grade": 70.5,
+      "summary": "Painel web para a equipe de operações do Capim Dourado Shopping registrar e acompanhar ocorrências de infraestrutura (elétrica, hidráulica, climatização, limpeza, segurança, escadas/elevadores) com criticidade, equipe responsável e SLA em contagem regressiva. As ocorrências aparecem como pinos sobre as plantas do Térreo e da Praça de Alimentação, e há módulos de manutenção preventiva com QR Code, rondas diárias, relatórios e uma série de simuladores ('Modo Futuro', 'Modo Comandante', 'Efeito Dominó', maquete 3D). O estado é salvo no navegador e sincronizado com uma API FastAPI que grava em MySQL."
+    },
+    {
+      "rank": 34,
+      "team": "Crobat",
+      "project": "OmniCenter",
+      "theme": "Atendimento e experiência de serviços",
+      "finalist": false,
+      "scores": {
+        "adherence": 21,
+        "implementation": 15,
+        "innovation": 13,
+        "ux": 10,
+        "pitch": 10
+      },
+      "sum": 69,
+      "penalty": -1.0,
+      "grade": 68.0,
+      "summary": "Aplicação web aberta por QR Codes espalhados pelo shopping: o visitante já entra com o local identificado, pergunta rotas a um assistente que desenha o caminho na planta (Dijkstra, com rota acessível), registra ocorrência em três passos com foto opcional, aciona SOS e acompanha por protocolo + PIN. A equipe do shopping recebe os chamados em um Kanban com triagem por regras (IA opcional), detalhe, histórico automático e reatribuição. Um serviço Python só de leitura mostra ao gestor indicadores, mapa de calor e padrões (recorrência, gargalo, reincidência, desvio)."
+    },
+    {
+      "rank": 35,
+      "team": "Articuno",
+      "project": "Articuno",
+      "theme": "Mobilidade e estacionamento",
+      "finalist": false,
+      "scores": {
+        "adherence": 20,
+        "implementation": 15,
+        "innovation": 12,
+        "ux": 12,
+        "pitch": 11
+      },
+      "sum": 70,
+      "penalty": -2.0,
+      "grade": 68.0,
+      "summary": "Estacionamento inteligente para o Capim Dourado Shopping com três interfaces em um mesmo app web: totem de entrada que lê a placa (simulado), recomenda um setor e emite ticket com QR Code; página do motorista aberta pelo QR, com tempo de permanência, valor estimado, último setor em que o carro foi detectado e pagamento simulado com janela de 15 minutos para sair; e painel administrativo com ocupação estimada por setor (A a G) sobre a planta real, sessões, ajuste auditado e histórico. A ocupação é estimada por eventos de passagem entre setores, sem sensor por vaga."
+    },
+    {
+      "rank": 36,
+      "team": "Tauros",
+      "project": "Passe Dourado",
+      "theme": "Engajamento e fidelização dos visitantes",
+      "finalist": false,
+      "scores": {
+        "adherence": 20,
+        "implementation": 15,
+        "innovation": 11,
+        "ux": 11,
+        "pitch": 12
+      },
+      "sum": 69,
+      "penalty": -1.0,
+      "grade": 68.0,
+      "summary": "Web app (PWA) de fidelização no formato de 'passaporte' do Capim Dourado: vitrine pública de lojas e campanhas, cadastro com +50 pontos, check-in presencial lendo o QR Code do balcão da loja com validação de geolocalização (Haversine, raio de 250 m do shopping), carimbos por categoria, níveis e extrato de pontos. Os pontos são trocados por vouchers com validade de 2 horas, que o lojista valida e baixa no portal dele; a administração tem painel com KPIs, cadastro de lojas, moderação de ofertas, ajuste do raio e exportação CSV. Está publicado em passaporteshopping.vercel.app."
+    },
+    {
+      "rank": 37,
+      "team": "Marowak",
+      "project": "MallPulse",
+      "theme": "Eventos, entretenimento e experiências",
+      "finalist": false,
+      "scores": {
+        "adherence": 16,
+        "implementation": 19,
+        "innovation": 11,
+        "ux": 11,
+        "pitch": 9
+      },
+      "sum": 66,
+      "penalty": 0,
+      "grade": 66.0,
+      "summary": "Ferramenta para o gestor do shopping registrar um objetivo comercial, público-alvo, data, categoria, local e lojas parceiras e receber uma pontuação de afinidade para a ação, calculada por regras a partir de histórico, sinergia com os lojistas, clima e calendário. Ao aprovar o plano, o sistema gera um QR Code que leva o visitante a um portal mobile para confirmar presença em um toque e marcar interesses. Um painel compara público estimado com check-ins, e há telas de mix de lojas e relatórios com exportação em CSV."
+    },
+    {
+      "rank": 38,
+      "team": "Gligar",
+      "project": "SmartMall AI",
+      "theme": "Eficiência operacional e infraestrutura",
+      "finalist": false,
+      "scores": {
+        "adherence": 17,
+        "implementation": 18,
+        "innovation": 10,
+        "ux": 11,
+        "pitch": 10
+      },
+      "sum": 66,
+      "penalty": -1.0,
+      "grade": 65.0,
+      "summary": "Plataforma web para centralizar ocorrências operacionais do shopping: quem identifica o problema registra a ocorrência, pede uma análise de IA que sugere categoria, prioridade, equipe e recomendação, e uma pessoa revisa e confirma. A partir daí criam-se tarefas com responsável e prazo, acompanham-se equipamentos, histórico e um dashboard de indicadores. Há perfis de demonstração (administração, operação, técnico, lojista) e uma tela de registro de rádio com texto digitado."
+    },
+    {
+      "rank": 39,
+      "team": "Typhlosion",
+      "project": "Capim Gestão",
+      "theme": "Eficiência operacional e infraestrutura",
+      "finalist": false,
+      "scores": {
+        "adherence": 19,
+        "implementation": 14,
+        "innovation": 10,
+        "ux": 12,
+        "pitch": 11
+      },
+      "sum": 66,
+      "penalty": -1.0,
+      "grade": 65.0,
+      "summary": "Sistema web para a administração do Capim Dourado Shopping acompanhar infraestrutura, ocorrências e atividades das equipes. Entrega as 7 telas previstas: login com escolha de perfil, painel com indicadores, planta interativa do shopping com marcadores de ocorrência, cadastro de equipamentos, registro e classificação de ocorrências, ordens de serviço por equipe e relatórios consolidados com impressão. O público são supervisores operacionais, administradores e equipes de manutenção."
+    },
+    {
+      "rank": 40,
+      "team": "Blastoise",
+      "project": "NEXO 2031",
+      "theme": "Inteligência comercial para lojistas",
+      "finalist": false,
+      "scores": {
+        "adherence": 19,
+        "implementation": 13,
+        "innovation": 13,
+        "ux": 12,
+        "pitch": 9
+      },
+      "sum": 66,
+      "penalty": -1.0,
+      "grade": 65.0,
+      "summary": "Painel web para o lojista de shopping acompanhar fluxo de pessoas, interações, vendas e conversão da loja, receber recomendações (vitrine, equipe, campanha conjunta), participar de um circuito promocional com outras duas lojas e comparar resultados antes e depois das ações. O diferencial demonstrado é a aba Câmeras: o navegador detecta pessoas em um vídeo com COCO-SSD, rastreia cada uma, classifica por zona (vitrine, corredor, caixa), conta entradas e saídas e mede permanência, cobrindo a cabeça com uma tarja, sem enviar imagem a servidor. O mapa de calor é desenhado sobre a planta do térreo do Capim Dourado."
+    },
+    {
+      "rank": 41,
+      "team": "Gyarados",
+      "project": "Capim Dourado Serviços",
+      "theme": "Atendimento e experiência de serviços",
+      "finalist": false,
+      "scores": {
+        "adherence": 17,
+        "implementation": 16,
+        "innovation": 10,
+        "ux": 9,
+        "pitch": 10
+      },
+      "sum": 62,
+      "penalty": -1.5,
+      "grade": 60.5,
+      "summary": "Aplicação web responsiva para o visitante do Capim Dourado Shopping consultar os serviços do shopping (17 no catálogo), reservar cadeira de rodas ou carrinho de bebê por horário, registrar objeto perdido e enviar mensagem ao SAC, recebendo um protocolo CAP-XXXX-XXXX sem criar conta. No backend há ainda login da equipe (atendente/gestor), agenda do dia e registro de retirada/devolução de equipamentos, além de um job que marca não comparecimento. O README também promete orientação/localização de lojas, acompanhamento por protocolo, painel administrativo, indicadores e IA para classificar solicitações — nada disso está entregue em tela."
+    },
+    {
+      "rank": 42,
+      "team": "Ampharos",
+      "project": "Capim Dourado Experience Intelligence",
+      "theme": "Eventos, entretenimento e experiências",
+      "finalist": false,
+      "scores": {
+        "adherence": 16,
+        "implementation": 15,
+        "innovation": 11,
+        "ux": 10,
+        "pitch": 8
+      },
+      "sum": 60,
+      "penalty": -0.5,
+      "grade": 59.5,
+      "summary": "Totem de autoatendimento em que o visitante aceita um aviso de privacidade, informa faixa etária, categoria de interesse, tipo de evento que gostaria de ver no shopping e avalia as lojas, recebendo um cupom de 10% com código único. O lojista registra o resgate do cupom numa tela de validação e a administração vê um painel com cinco abas (visão geral, públicos, interesses, tendências, relatórios). Na entrega final foi acrescentado um backend FastAPI que grava as respostas e os resgates em SQLite e traz módulos de coleta de dados regionais (importação de CSV do Google Trends, Google Places, eventos). A equipe declarou o tema apenas como \"Documentação\"; pelo conteúdo o projeto ataca o tema 10 (Eventos, entretenimento e experiências)."
+    },
+    {
+      "rank": 43,
+      "team": "Cyndaquil",
+      "project": "ShoppingLink",
+      "theme": "Jornada de compra digital e física",
+      "finalist": false,
+      "scores": {
+        "adherence": 18,
+        "implementation": 13,
+        "innovation": 10,
+        "ux": 10,
+        "pitch": 9
+      },
+      "sum": 60,
+      "penalty": -1.5,
+      "grade": 58.5,
+      "summary": "Vitrine digital do Capim Dourado Shopping em que o cliente busca um produto, compara preços entre lojas, abre a página do produto, escolhe retirar no shopping em até 1h ou receber em casa, fecha o pedido e acompanha as etapas. Há um diretório com 182 lojas do shopping e um painel do lojista para cadastrar produtos."
+    },
+    {
+      "rank": 44,
+      "team": "Arbok",
+      "project": "ACHEI",
+      "theme": "Inteligência comercial para lojistas",
+      "finalist": false,
+      "scores": {
+        "adherence": 10,
+        "implementation": 17,
+        "innovation": 9,
+        "ux": 11,
+        "pitch": 10
+      },
+      "sum": 57,
+      "penalty": 0,
+      "grade": 57.0,
+      "summary": "Aplicação web para o consumidor do Shopping Capim Dourado pesquisar um produto e descobrir quais lojas o vendem, ver promoções, listar lojas e se orientar por um mapa com rotas. Tem conta de usuário com lojas favoritas e uma carteira de pontos demonstrativa ('Achei Tokens'). O lojista tem uma área para manter dados da loja, produtos e promoções."
+    },
+    {
+      "rank": 45,
+      "team": "Beedrill",
+      "project": "VibeMind",
+      "theme": "Eventos, entretenimento e experiências",
+      "finalist": false,
+      "scores": {
+        "adherence": 15,
+        "implementation": 11,
+        "innovation": 10,
+        "ux": 10,
+        "pitch": 10
+      },
+      "sum": 56,
+      "penalty": 0,
+      "grade": 56.0,
+      "summary": "O VibeMind propõe um ciclo escutar → recomendar → planejar → avaliar para os eventos do shopping. O visitante (VibeMatch) marca interesses por ícones e recebe os eventos ordenados por afinidade; depois avalia um evento com estrelas e ganha um cupom de desconto sorteado. A organização (EventMind) vê contagens de interesses por categoria, canal de coleta, média das avaliações, lista de cupons para enviar por WhatsApp e cadastra eventos. O foco declarado é incluir públicos que pesquisas digitais deixam de fora."
+    },
+    {
+      "rank": 46,
+      "team": "Houndour",
+      "project": "TemAqui",
+      "theme": "Descoberta de produtos, lojas e promoções",
+      "finalist": false,
+      "scores": {
+        "adherence": 14,
+        "implementation": 4,
+        "innovation": 10,
+        "ux": 10,
+        "pitch": 6
+      },
+      "sum": 44,
+      "penalty": 0,
+      "grade": 44.0,
+      "summary": "Proposta de plataforma para o consumidor descobrir produtos, comparar ofertas entre lojas e localizar o estabelecimento dentro do shopping. Prevê três interfaces: totem vertical interativo, site mobile acessado por QR Code (sem cadastro) para continuar a busca ou a rota, e painel do lojista para cadastrar produtos, preços e promoções. Inclui mapa interno com rota demonstrativa e, como evolução, busca por intenção e recompensas com leitura de NFC-e."
+    },
+    {
+      "rank": 47,
+      "team": "Golem",
+      "project": "OperIA Mall",
+      "theme": "Eficiência operacional e infraestrutura",
+      "finalist": false,
+      "scores": {
+        "adherence": 14,
+        "implementation": 6,
+        "innovation": 8,
+        "ux": 4,
+        "pitch": 5
+      },
+      "sum": 37,
+      "penalty": 0,
+      "grade": 37.0,
+      "summary": "Proposta de plataforma para centralizar o registro, a distribuição e o acompanhamento de ocorrências operacionais do shopping (manutenção, limpeza e segurança). Colaboradores registrariam ocorrências em campo por aplicativo móvel, com texto, áudio e foto; a administração acompanharia em painel web com mapa, fila priorizada e indicadores de SLA. Uma IA sugeriria categoria e prioridade, sempre com revisão humana."
+    }
+  ]
+}

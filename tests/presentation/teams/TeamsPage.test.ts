@@ -43,9 +43,10 @@ describe('textos do card de equipe', () => {
 });
 
 describe('/equipes escondida até o sorteio', () => {
-  it('o menu não tem "Equipes" nem link de página: só âncoras da LP', () => {
+  it('o menu não tem "Equipes": fora as âncoras da LP, a única página é /avaliacao (Resultados)', () => {
     expect(NAV_LINKS.find((l) => l.label === 'Equipes')).toBeUndefined();
-    expect(NAV_LINKS.every((l) => l.href.startsWith('#'))).toBe(true);
+    const pages = NAV_LINKS.filter((l) => !l.href.startsWith('#'));
+    expect(pages).toEqual([{ href: '/avaliacao', label: 'Resultados' }]);
   });
 
   it('na LP nada é página atual, as âncoras continuam #secao e nenhum link usa o nav spy', () => {
