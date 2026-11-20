@@ -24,6 +24,7 @@ const EVALUATION_HEADERS = [
   'Justificativa Pitch',
   'Pontos fortes',
   'Pontos de atenção',
+  'Desempate',
 ];
 
 // uma linha da célula = um item da lista
@@ -126,6 +127,7 @@ function evaluationLookup_(book, body) {
       },
       strengths: evaluationList_(row[19]),
       attention: evaluationList_(row[20]),
+      tieBreak: drawText_(row[21]),
     },
   };
 }

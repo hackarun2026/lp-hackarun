@@ -37,13 +37,20 @@ describe('cartão do resultado da avaliação', () => {
     });
     const why = card.querySelectorAll('.ev-card__why');
     expect(why).toHaveLength(1);
-    expect(why[0]?.textContent).toBe('Telas <b>claras</b>.');
+    expect(why[0]?.querySelector('p')?.textContent).toBe('Telas <b>claras</b>.');
     expect(card.querySelector('b')).toBeNull();
     expect([...card.querySelectorAll('.ev-points--strong li')].map((li) => li.textContent)).toEqual([
       'Forte A',
       'Forte B',
     ]);
     expect(card.querySelectorAll('.ev-points--attention li')).toHaveLength(1);
+  });
+
+  it('desempate aparece em destaque logo abaixo da nota; sem empate, nada', () => {
+    const card = render({ ...base, tieBreak: 'Empatou em 87; ficou em 8º.' });
+    expect(card.querySelector('.ev-card__tie')?.textContent).toContain('ficou em 8º');
+    expect(card.querySelector('.ev-card__head')?.nextElementSibling?.className).toBe('ev-card__tie');
+    expect(render({ ...base, tieBreak: ' ' }).querySelector('.ev-card__tie')).toBeNull();
   });
 
   it('sem análise (resposta antiga) o cartão não ganha blocos vazios', () => {

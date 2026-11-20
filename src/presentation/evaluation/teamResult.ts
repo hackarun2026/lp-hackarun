@@ -23,6 +23,8 @@ export interface TeamResult {
   justifications?: Partial<Record<CriterionKey, string>>;
   strengths?: string[];
   attention?: string[];
+  // explicação do desempate, quando a equipe empatou na nota final com outra(s)
+  tieBreak?: string;
 }
 
 function textList(title: string, items: string[] | undefined, className: string): HTMLElement | null {
@@ -87,6 +89,12 @@ export function renderTeamResult(
   );
   head.append(who, grade);
 
+  const tie =
+    typeof result.tieBreak === 'string' && result.tieBreak.trim()
+      ? el('aside', 'ev-card__tie', undefined, { role: 'note' })
+      : null;
+  tie?.append(el('strong', '', 'Desempate'), el('p', '', result.tieBreak ?? ''));
+
   const list = el('ul', 'ev-card__scores');
   CRITERIA.forEach((c) => {
     const score = result.scores[c.key];
@@ -102,7 +110,11 @@ export function renderTeamResult(
       el('span', 'ev-card__bar', undefined, { 'aria-hidden': 'true' }),
     );
     const why = result.justifications?.[c.key];
-    if (typeof why === 'string' && why.trim()) item.append(el('p', 'ev-card__why', why));
+    if (typeof why === 'string' && why.trim()) {
+      const box = el('div', 'ev-card__why');
+      box.append(el('span', 'ev-card__why-label', 'Justificativa'), el('p', '', why));
+      item.append(box);
+    }
     list.append(item);
   });
 
@@ -126,7 +138,9 @@ export function renderTeamResult(
     textList('Pontos de atenção', result.attention, 'ev-points--attention'),
   ].forEach((box) => box && points.append(box));
 
-  card.append(head, list, totals, body);
+  card.append(head);
+  if (tie) card.append(tie);
+  card.append(el('h4', 'ev-card__section', 'Nota por critério'), list, totals, body);
   if (points.childElementCount) card.append(points);
   target.append(card);
 }

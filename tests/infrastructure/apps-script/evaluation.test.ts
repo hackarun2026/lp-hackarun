@@ -26,6 +26,7 @@ const HEADERS = [
   'Justificativa Pitch',
   'Pontos fortes',
   'Pontos de atenção',
+  'Desempate',
 ];
 
 function setup() {
@@ -56,6 +57,7 @@ function setup() {
     'Pitch Mew.',
     'Forte 1\n Forte 2 \n',
     'Atenção 1',
+    'Empatou e ficou em 1º.',
   ]);
   sheet.appendRow([
     2,
@@ -113,9 +115,11 @@ describe('Apps Script · avaliação técnica', () => {
       },
       strengths: ['Forte 1', 'Forte 2'],
       attention: ['Atenção 1'],
+      tieBreak: 'Empatou e ficou em 1º.',
     });
     const onix = lookup('Onix', 'hr26-dddddd@exemplo.com').result;
     expect(onix?.['strengths']).toEqual([]);
+    expect(onix?.['tieBreak']).toBe('');
     expect(onix?.['justifications']).toMatchObject({ adherence: '' });
   });
 
